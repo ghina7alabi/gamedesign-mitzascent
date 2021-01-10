@@ -81,6 +81,12 @@ public class PlayerController : MonoBehaviour
                 fallingPointsText.text = "Falling Points: " + fallingDistancePoints;
             }
         }
+
+        if (collision.gameObject.tag == "Sticky")
+        {
+            gameObject.GetComponent<Rigidbody2D>().simulated = false;
+            gameObject.transform.SetParent(collision.gameObject.transform);
+        }
     }
 
     private void OnCollisionStay2D(Collision2D collision)
