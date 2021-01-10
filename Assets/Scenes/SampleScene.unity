@@ -8093,6 +8093,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: {fileID: 1522713587}
+  player: {fileID: 820235553}
 --- !u!1 &1192012925
 GameObject:
   m_ObjectHideFlags: 0

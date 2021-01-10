@@ -97,6 +97,8 @@ public class StickyScript : MonoBehaviour
             rb.velocity = new Vector3(0, 0, 0); //stop velocity
             TurnBackSpeed = new Vector3(OriginalPlatPos.x - CurrentPlatPos.x, OriginalPlatPos.y - CurrentPlatPos.y) * 10;
             rb.velocity = TurnBackSpeed; //take it
+
+            PlayerController.sticktimer = Time.time + 0.2f;
         }
     }
 
@@ -106,6 +108,7 @@ public class StickyScript : MonoBehaviour
         {
             player.GetComponent<Rigidbody2D>().simulated = true;
             player.transform.parent = null;
+            player.GetComponent<Rigidbody2D>().velocity = rb.velocity;
 
             shot = false;
             rb.velocity = new Vector3(0, 0, 0);

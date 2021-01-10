@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D playerRB;
     public float walkSpeed = 7;
     public float thrust = 220f;
+    public static float sticktimer;
 
     bool onPlatform, mouseClicked, canMove, canDoubleJump;
 
@@ -82,7 +83,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (collision.gameObject.tag == "Sticky")
+        if (collision.gameObject.tag == "Sticky" && Time.time > sticktimer)
         {
             gameObject.GetComponent<Rigidbody2D>().simulated = false;
             gameObject.transform.SetParent(collision.gameObject.transform);
