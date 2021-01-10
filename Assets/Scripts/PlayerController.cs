@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Narrate;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,26 +11,34 @@ public class PlayerController : MonoBehaviour
     public float walkSpeed = 7;
     public float thrust = 220f;
 
-    bool onPlatform, mouseClicked, canMove;
+    bool onPlatform, mouseClicked, canMove, canDoubleJump;
+
+    int fallingDistancePoints;
+    Vector3 stablePosition;
+    public TextMeshProUGUI fallingPointsText;
 
     // Start is called before the first frame update
     void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))) //&&canMove 
+        if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && canMove) //&&canMove 
         {
             float horizontal = Input.GetAxis("Horizontal");
             playerRB.velocity = new Vector2(horizontal, playerRB.velocity.y / walkSpeed) * walkSpeed;
         }
-        if (Input.GetKeyDown(KeyCode.W)) //&& onPlatform && canMove
+        if (Input.GetKeyDown(KeyCode.W) && onPlatform && canMove) //&& onPlatform && canMove
         {
             playerRB.AddForce(transform.up * thrust, ForceMode2D.Impulse);
+        }
+        if (Input.GetKeyDown(KeyCode.W) && !onPlatform && canDoubleJump)
+        {
+            playerRB.AddForce(transform.up * thrust, ForceMode2D.Impulse);
+            canDoubleJump = false;
         }
 
         if (Input.GetMouseButtonDown(0))
@@ -40,11 +50,28 @@ public class PlayerController : MonoBehaviour
         {
             mouseClicked = false;
         }
+        
+
+        //fallingDistancePoints
+        if(onPlatform)
+        {
+            stablePosition = gameObject.transform.position;
+        }
+
+        if (!canMove && !onPlatform)
+        {
+            //he's in the air, but is he falling or not?
+            if (stablePosition.y > gameObject.transform.position.y)
+            {
+                fallingDistancePoints++;
+                fallingPointsText.text = "Falling Points: " + fallingDistancePoints;
+            }
+        }
     }
 
     //TODO: Add the range thingie around the player
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Base")
         {
@@ -66,4 +93,24 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "NPC")
+        {
+            if (!NarrationManager.instance.isPlaying)
+            {
+                if (Input.GetKeyDown(KeyCode.X))
+                {
+                    if (fallingDistancePoints >= 10)
+                    {
+                        Debug.Log("Take a powerup");
+                        fallingDistancePoints -= 10;
+                        fallingPointsText.text = "Falling Points: " + fallingDistancePoints;
+                        canDoubleJump = true;
+                    }
+                }
+                
+            }
+        }
+    }
 }
