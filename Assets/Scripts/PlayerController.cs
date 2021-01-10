@@ -61,15 +61,27 @@ public class PlayerController : MonoBehaviour
         if (!canMove && !onPlatform)
         {
             //he's in the air, but is he falling or not?
-            if (stablePosition.y > gameObject.transform.position.y)
-            {
-                fallingDistancePoints++;
-                fallingPointsText.text = "Falling Points: " + fallingDistancePoints;
-            }
+            //if (stablePosition.y > gameObject.transform.position.y)
+            //{
+            //    fallingDistancePoints++;
+            //    fallingPointsText.text = "Falling Points: " + fallingDistancePoints;
+            //}
         }
     }
 
     //TODO: Add the range thingie around the player
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Base")
+        {
+            if (stablePosition.y > gameObject.transform.position.y)
+            {
+                fallingDistancePoints  += (int)(stablePosition.y-gameObject.transform.position.y);
+                fallingPointsText.text = "Falling Points: " + fallingDistancePoints;
+            }
+        }
+    }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
@@ -97,19 +109,12 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "NPC")
         {
-            if (!NarrationManager.instance.isPlaying)
+            if (!NarrationManager.instance.isPlaying && Input.GetKeyDown(KeyCode.X) && fallingDistancePoints >= 10)
             {
-                if (Input.GetKeyDown(KeyCode.X))
-                {
-                    if (fallingDistancePoints >= 10)
-                    {
-                        Debug.Log("Take a powerup");
-                        fallingDistancePoints -= 10;
-                        fallingPointsText.text = "Falling Points: " + fallingDistancePoints;
-                        canDoubleJump = true;
-                    }
-                }
-                
+                Debug.Log("Take a powerup");
+                fallingDistancePoints -= 10;
+                fallingPointsText.text = "Falling Points: " + fallingDistancePoints;
+                canDoubleJump = true;
             }
         }
     }
