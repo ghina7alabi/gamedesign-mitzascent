@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Narrate;
 using TMPro;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -15,9 +16,10 @@ public class PlayerController : MonoBehaviour
     bool onPlatform, mouseClicked, canMove, canDoubleJump;
     public static bool playerSticked;
 
-    int fallingDistancePoints;
+    int fallingDistancePoints, climbingDistancePoints;
     Vector3 stablePosition;
-    public TextMeshProUGUI fallingPointsText;
+    public TextMeshProUGUI fallingPointsText, climbingPointsText;
+    public Image doubleJumpUI, platformSpeedUI;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +43,7 @@ public class PlayerController : MonoBehaviour
         {
             playerRB.AddForce(transform.up * thrust, ForceMode2D.Impulse);
             canDoubleJump = false;
+            doubleJumpUI.color = new Color(128, 128, 128);
         }
 
         if (Input.GetMouseButtonDown(0))
@@ -54,20 +57,10 @@ public class PlayerController : MonoBehaviour
         }
         
 
-        //fallingDistancePoints
+        //DistancePoints
         if(onPlatform)
         {
             stablePosition = gameObject.transform.position;
-        }
-
-        if (!canMove && !onPlatform)
-        {
-            //he's in the air, but is he falling or not?
-            //if (stablePosition.y > gameObject.transform.position.y)
-            //{
-            //    fallingDistancePoints++;
-            //    fallingPointsText.text = "Falling Points: " + fallingDistancePoints;
-            //}
         }
     }
 
@@ -77,10 +70,16 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Base")
         {
-            if (stablePosition.y > gameObject.transform.position.y)
+            if (stablePosition.y > gameObject.transform.position.y + 5)
             {
                 fallingDistancePoints  += (int)(stablePosition.y-gameObject.transform.position.y);
                 fallingPointsText.text = "Falling Points: " + fallingDistancePoints;
+            }
+
+            if (stablePosition.y < gameObject.transform.position.y - 4)
+            {
+                climbingDistancePoints += (int)(gameObject.transform.position.y - stablePosition.y);
+                climbingPointsText.text = "Climbing Points: " + climbingDistancePoints;
             }
         }
 
@@ -118,12 +117,16 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "NPC")
         {
-            if (!NarrationManager.instance.isPlaying && Input.GetKeyDown(KeyCode.X) && fallingDistancePoints >= 10)
+            if (!NarrationManager.instance.isPlaying)
             {
-                Debug.Log("Take a powerup");
-                fallingDistancePoints -= 10;
-                fallingPointsText.text = "Falling Points: " + fallingDistancePoints;
-                canDoubleJump = true;
+                if (Input.GetKeyDown(KeyCode.X) && fallingDistancePoints >= 10 && !canDoubleJump)
+                {
+                    Debug.Log("Take a powerup");
+                    fallingDistancePoints -= 10;
+                    fallingPointsText.text = "Falling Points: " + fallingDistancePoints;
+                    canDoubleJump = true;
+                    doubleJumpUI.color = new Color(90, 255, 105);
+                }
             }
         }
     }
