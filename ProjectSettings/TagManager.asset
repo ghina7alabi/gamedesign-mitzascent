@@ -8,6 +8,7 @@ TagManager:
   - Base
   - NPC
   - Sticky
+  - Gravity
   layers:
   - Default
   - TransparentFX

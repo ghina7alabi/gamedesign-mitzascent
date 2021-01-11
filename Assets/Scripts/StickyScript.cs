@@ -7,7 +7,7 @@ public class StickyScript : MonoBehaviour
     public GameObject radius, player; //sprite radius
     Rigidbody2D rb; //rb of the tiny circle
     Vector3 OriginalPlatPos, WantedPlatPos, OriginalMousePos, CurrentMousePos, MouseDifference, PlatDifference, CurrentPlatPos, TurnBackSpeed;
-    bool shot;
+    bool shot, charSticked;
 
     float WantedLimitPointX, WantedLimitPointY;
     float thex, they;
@@ -108,8 +108,13 @@ public class StickyScript : MonoBehaviour
         {
             player.GetComponent<Rigidbody2D>().simulated = true;
             player.transform.parent = null;
-            player.GetComponent<Rigidbody2D>().velocity = rb.velocity;
 
+            if (PlayerController.playerSticked == true)
+            {
+                player.GetComponent<Rigidbody2D>().velocity = rb.velocity;
+            }
+
+            PlayerController.playerSticked = false;
             shot = false;
             rb.velocity = new Vector3(0, 0, 0);
             this.gameObject.transform.position = OriginalPlatPos;

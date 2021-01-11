@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public static float sticktimer;
 
     bool onPlatform, mouseClicked, canMove, canDoubleJump;
+    public static bool playerSticked;
 
     int fallingDistancePoints;
     Vector3 stablePosition;
@@ -87,6 +88,7 @@ public class PlayerController : MonoBehaviour
         {
             gameObject.GetComponent<Rigidbody2D>().simulated = false;
             gameObject.transform.SetParent(collision.gameObject.transform);
+            playerSticked = true;
         }
     }
 
