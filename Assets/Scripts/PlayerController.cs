@@ -13,29 +13,31 @@ public class PlayerController : MonoBehaviour
     public float thrust = 220f;
     public static float sticktimer;
 
-    bool onPlatform, mouseClicked, canMove, canDoubleJump;
+    bool onPlatform, mouseClicked, canMove;
+    bool canDoubleJump, canIncreasePlatformSpeed, canMidair; //powerup booleans
     public static bool playerSticked;
 
     int fallingDistancePoints, climbingDistancePoints;
     Vector3 stablePosition;
     public TextMeshProUGUI fallingPointsText, climbingPointsText;
-    public Image doubleJumpUI, platformSpeedUI;
+    public Image doubleJumpUI, platformSpeedUI, midairStopUI;
 
     // Start is called before the first frame update
     void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
+        stablePosition = gameObject.transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)))// && canMove) 
+        if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && canMove) 
         {
             float horizontal = Input.GetAxis("Horizontal");
             playerRB.velocity = new Vector2(horizontal, playerRB.velocity.y / walkSpeed) * walkSpeed;
         }
-        if (Input.GetKeyDown(KeyCode.W))// && onPlatform && canMove)
+        if (Input.GetKeyDown(KeyCode.W) && onPlatform && canMove)
         {
             playerRB.AddForce(transform.up * thrust, ForceMode2D.Impulse);
         }
@@ -43,7 +45,7 @@ public class PlayerController : MonoBehaviour
         {
             playerRB.AddForce(transform.up * thrust, ForceMode2D.Impulse);
             canDoubleJump = false;
-            doubleJumpUI.color = new Color(128, 128, 128);
+            doubleJumpUI.color = new Color(1, 1, 1, 0); //disappear
         }
 
         if (Input.GetMouseButtonDown(0))
@@ -54,13 +56,26 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             mouseClicked = false;
+            if (canIncreasePlatformSpeed)
+            {
+                //PlatformScript.platformSpeed = 10;
+                platformSpeedUI.color = new Color(1, 1, 1, 0); //disappear
+                canIncreasePlatformSpeed = false;
+            }
+
         }
-        
 
         //DistancePoints
         if(onPlatform)
         {
             stablePosition = gameObject.transform.position;
+        }
+
+        if (!onPlatform && !canMove && canMidair)
+        {
+            midairStopUI.color = new Color(1, 1, 1, 0); //disappear
+            canMove = true;
+            canMidair = false;
         }
     }
 
@@ -119,13 +134,34 @@ public class PlayerController : MonoBehaviour
         {
             if (!NarrationManager.instance.isPlaying)
             {
-                if (Input.GetKeyDown(KeyCode.X) && fallingDistancePoints >= 10 && !canDoubleJump)
+                if (Input.GetKeyDown(KeyCode.Alpha1) && fallingDistancePoints >= 10 && !canDoubleJump)
                 {
-                    Debug.Log("Take a powerup");
+                    Debug.Log("Take a double jump");
                     fallingDistancePoints -= 10;
                     fallingPointsText.text = "Falling Points: " + fallingDistancePoints;
+
                     canDoubleJump = true;
-                    doubleJumpUI.color = new Color(90, 255, 105);
+                    doubleJumpUI.color = new Color(1, 1, 1, 1); //appear
+                }
+
+                if (Input.GetKeyDown(KeyCode.Alpha2) && fallingDistancePoints >= 10 && !canIncreasePlatformSpeed)
+                {
+                    Debug.Log("Change platform speeds");
+                    fallingDistancePoints -= 10;
+                    fallingPointsText.text = "Falling Points: " + fallingDistancePoints;
+
+                    canIncreasePlatformSpeed = true;
+                    platformSpeedUI.color = new Color(1, 1, 1, 1); //appear
+                }
+
+                if (Input.GetKeyDown(KeyCode.Alpha3) && fallingDistancePoints >= 10 && !canMidair)
+                {
+                    Debug.Log("Midair Stop");
+                    fallingDistancePoints -= 10;
+                    fallingPointsText.text = "Falling Points: " + fallingDistancePoints;
+
+                    canMidair = true;
+                    midairStopUI.color = new Color(1, 1, 1, 1); //appear
                 }
             }
         }
