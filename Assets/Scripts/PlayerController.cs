@@ -14,7 +14,9 @@ public class PlayerController : MonoBehaviour
     public static float sticktimer;
 
     bool onPlatform, mouseClicked, canMove;
-    bool canDoubleJump, canIncreasePlatformSpeed, canMidair; //powerup booleans
+    bool canDoubleJump, canMidair; //powerup booleans
+    public static bool canIncreasePlatformSpeed; //powerup booleans
+
     public static bool playerSticked;
 
     int fallingDistancePoints, climbingDistancePoints;
@@ -45,7 +47,7 @@ public class PlayerController : MonoBehaviour
         {
             playerRB.AddForce(transform.up * thrust, ForceMode2D.Impulse);
             canDoubleJump = false;
-            doubleJumpUI.color = new Color(1, 1, 1, 0); //disappear
+            doubleJumpUI.color = new Color(1, 1, 1, 0.3f); //disappear
         }
 
         if (Input.GetMouseButtonDown(0))
@@ -58,8 +60,7 @@ public class PlayerController : MonoBehaviour
             mouseClicked = false;
             if (canIncreasePlatformSpeed)
             {
-                //PlatformScript.platformSpeed = 10;
-                platformSpeedUI.color = new Color(1, 1, 1, 0); //disappear
+                platformSpeedUI.color = new Color(1, 1, 1, 0.3f); //disappear
                 canIncreasePlatformSpeed = false;
             }
 
@@ -73,7 +74,7 @@ public class PlayerController : MonoBehaviour
 
         if (!onPlatform && !canMove && canMidair)
         {
-            midairStopUI.color = new Color(1, 1, 1, 0); //disappear
+            midairStopUI.color = new Color(1, 1, 1, 0.3f); //disappear
             canMove = true;
             canMidair = false;
         }

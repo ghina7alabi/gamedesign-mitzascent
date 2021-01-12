@@ -96,7 +96,15 @@ public class PlatformScript : MonoBehaviour
             radius.GetComponent<SpriteRenderer>().enabled = false; //enable sprite renderer
             rb.velocity = new Vector3(0, 0, 0); //stop velocity
             TurnBackSpeed = new Vector3(OriginalPlatPos.x - CurrentPlatPos.x, OriginalPlatPos.y - CurrentPlatPos.y) * 10;
-            rb.velocity = TurnBackSpeed; //take it
+            //if (PlayerController.canIncreasePlatformSpeed)
+            //{
+            //    rb.velocity = TurnBackSpeed*10; //with powerup
+            //    PlayerController.canIncreasePlatformSpeed = false;
+            //}
+            //else
+            //{
+            rb.velocity = TurnBackSpeed; //without powerup
+            //}
         }
     }
 
