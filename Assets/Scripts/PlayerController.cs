@@ -32,12 +32,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && canMove) 
+        if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)))// && canMove) 
         {
             float horizontal = Input.GetAxis("Horizontal");
             playerRB.velocity = new Vector2(horizontal, playerRB.velocity.y / walkSpeed) * walkSpeed;
         }
-        if (Input.GetKeyDown(KeyCode.W) && onPlatform && canMove)
+        if (Input.GetKeyDown(KeyCode.W))// && onPlatform && canMove)
         {
             playerRB.AddForce(transform.up * thrust, ForceMode2D.Impulse);
         }
