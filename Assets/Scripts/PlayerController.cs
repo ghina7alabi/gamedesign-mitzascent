@@ -4,18 +4,23 @@ using UnityEngine;
 using Narrate;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
     //player variables
     Rigidbody2D playerRB;
-    public float walkSpeed = 7;
+    public float walkSpeed = 7f;
     public float thrust = 220f;
     public static float sticktimer;
+    public Animator animator;
+    float horizontalMove = 0f;
+    
 
     bool onPlatform, mouseClicked, canMove;
     bool canDoubleJump, canMidair; //powerup booleans
     public static bool canIncreasePlatformSpeed; //powerup booleans
+    private bool m_FacingRight = true;
 
     public static bool playerSticked;
 
@@ -24,16 +29,34 @@ public class PlayerController : MonoBehaviour
     public TextMeshProUGUI fallingPointsText, climbingPointsText;
     public Image doubleJumpUI, platformSpeedUI, midairStopUI;
 
+
+    [Header("Events")]
+    [Space]
+
+    public UnityEvent OnLandEvent;
+
+    [System.Serializable]
+    public class BoolEvent : UnityEvent<bool> { }
+
+
+
+        
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         playerRB = GetComponent<Rigidbody2D>();
         stablePosition = gameObject.transform.position;
+        if (OnLandEvent == null)
+            OnLandEvent = new UnityEvent();
     }
 
     // Update is called once per frame
     void Update()
     {
+        horizontalMove = Input.GetAxisRaw("Horizontal") * walkSpeed;
+        animator.SetFloat("speed", Mathf.Abs(horizontalMove));
+
         if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)))// && canMove) 
         {
             float horizontal = Input.GetAxis("Horizontal");
@@ -42,12 +65,14 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W))// && onPlatform && canMove)
         {
             playerRB.AddForce(transform.up * thrust, ForceMode2D.Impulse);
+            animator.SetBool("isJumping", true);
         }
         if (Input.GetKeyDown(KeyCode.W) && !onPlatform && canDoubleJump)
         {
             playerRB.AddForce(transform.up * thrust, ForceMode2D.Impulse);
             canDoubleJump = false;
             doubleJumpUI.color = new Color(1, 1, 1, 0.3f); //disappear
+            
         }
 
         if (Input.GetMouseButtonDown(0))
@@ -78,6 +103,21 @@ public class PlayerController : MonoBehaviour
             canMove = true;
             canMidair = false;
         }
+
+        // If the input is moving the player right and the player is facing left...
+      if (horizontalMove > 0 && !m_FacingRight)
+        {
+            // ... flip the player.
+          Flip();
+        }
+        // Otherwise if the input is moving the player left and the player is facing right...
+        else if (horizontalMove < 0 && m_FacingRight)
+        {
+            // ... flip the player.
+           Flip();
+        }
+
+
     }
 
     //TODO: Add the range thingie around the player
@@ -143,6 +183,8 @@ public class PlayerController : MonoBehaviour
 
                     canDoubleJump = true;
                     doubleJumpUI.color = new Color(1, 1, 1, 1); //appear
+
+                    
                 }
 
                 if (Input.GetKeyDown(KeyCode.Alpha2) && fallingDistancePoints >= 10 && !canIncreasePlatformSpeed)
@@ -167,4 +209,19 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+    public void OnLanding()
+    {
+        animator.SetBool("isJumping", false);
+    }
+    private void Flip()
+    {
+        // Switch the way the player is labelled as facing.
+        m_FacingRight = !m_FacingRight;
+
+        // Multiply the player's x local scale by -1.
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
+    }
+
 }
