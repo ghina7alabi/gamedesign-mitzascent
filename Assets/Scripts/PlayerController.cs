@@ -41,7 +41,6 @@ public class PlayerController : MonoBehaviour
 
 
         
-
     // Start is called before the first frame update
     void Awake()
     {
@@ -137,6 +136,8 @@ public class PlayerController : MonoBehaviour
                 climbingDistancePoints += (int)(gameObject.transform.position.y - stablePosition.y);
                 climbingPointsText.text = "Climbing Points: " + climbingDistancePoints;
             }
+
+            OnLanding();
         }
 
         if (collision.gameObject.tag == "Sticky" && Time.time > sticktimer)
@@ -144,6 +145,8 @@ public class PlayerController : MonoBehaviour
             gameObject.GetComponent<Rigidbody2D>().simulated = false;
             gameObject.transform.SetParent(collision.gameObject.transform);
             playerSticked = true;
+
+            OnLanding();
         }
     }
 
@@ -209,6 +212,8 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+
     public void OnLanding()
     {
         animator.SetBool("isJumping", false);
