@@ -27,12 +27,12 @@ public class StickyScript : MonoBehaviour
         {
             shot = false;
             radius.GetComponent<SpriteRenderer>().enabled = true;
-            OriginalMousePos = Camera.main.WorldToViewportPoint(Input.mousePosition); //Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            OriginalMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition); //Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
 
         if (Input.GetMouseButton(0)) // 
         {
-            CurrentMousePos = Camera.main.WorldToViewportPoint(Input.mousePosition); //Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            CurrentMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition); //Camera.main.ScreenToWorldPoint(Input.mousePosition);
             MouseDifference = CurrentMousePos - OriginalMousePos;
             WantedPlatPos = OriginalPlatPos + MouseDifference;
             CurrentPlatPos = this.gameObject.transform.position;
