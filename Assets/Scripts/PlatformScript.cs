@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlatformScript : MonoBehaviour
 {
-    public GameObject radius; //sprite radius
+    public GameObject radius, reticle; //sprite radius
     Rigidbody2D rb; //rb of the tiny circle
     Vector3 OriginalPlatPos, WantedPlatPos, OriginalMousePos, CurrentMousePos, MouseDifference, PlatDifference, CurrentPlatPos, TurnBackSpeed;
     bool shot;
@@ -23,74 +23,20 @@ public class PlatformScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) //take mouse position then enable the sprite renderer
+        if (Input.GetMouseButtonDown(0)) //enable the sprite renderer, set shot false
         {
             shot = false;
             radius.GetComponent<SpriteRenderer>().enabled = true;
-            OriginalMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition); //Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
        
-        if (Input.GetMouseButton(0)) // 
+        if (Input.GetMouseButton(0)) //follow reticle
         {
-            CurrentMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition); //Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            MouseDifference = CurrentMousePos - OriginalMousePos;
-            WantedPlatPos = OriginalPlatPos + MouseDifference;
             CurrentPlatPos = this.gameObject.transform.position;
-            PlatDifference = CurrentPlatPos - OriginalPlatPos;
+            WantedPlatPos = OriginalPlatPos + reticle.transform.position;
 
-            if ((PlatDifference.x * PlatDifference.x) + (PlatDifference.y * PlatDifference.y) < 16) //i think its like the radius size, so if the plat position is smaller than the radius, move it
-            {
-                rb.velocity = new Vector3(WantedPlatPos.x - CurrentPlatPos.x, WantedPlatPos.y - CurrentPlatPos.y, 0) * 10; //10 is the speed?
-            }
-            else //if not make it zero
-            {
-                rb.velocity = new Vector3(0, 0, 0);
-
-                thex = (Mathf.Abs(MouseDifference.x)) / ((Mathf.Abs(MouseDifference.x)) + (Mathf.Abs(MouseDifference.y)));
-                they = (Mathf.Abs(MouseDifference.y)) / ((Mathf.Abs(MouseDifference.x)) + (Mathf.Abs(MouseDifference.y)));
-
-                WantedLimitPointX = ((Mathf.Sqrt(-thex * thex + 2f * thex)) - they/4) * 4f;
-                WantedLimitPointY = ((Mathf.Sqrt(-they * they + 2f * they)) - thex/4) * 4f;
-
-                //if (MouseDifference.x >= 0 && MouseDifference.y >= 0)
-                //{
-                //    gameObject.transform.position = new Vector3(OriginalPlatPos.x + WantedLimitPointX, OriginalPlatPos.y + WantedLimitPointY, 0);
-                //}
-                //if (MouseDifference.x >= 0 && MouseDifference.y <= 0)
-                //{
-                //    gameObject.transform.position = new Vector3(OriginalPlatPos.x + WantedLimitPointX, OriginalPlatPos.y - WantedLimitPointY, 0);
-                //}
-                //if (MouseDifference.x <= 0 && MouseDifference.y >= 0)
-                //{
-                //    gameObject.transform.position = new Vector3(OriginalPlatPos.x - WantedLimitPointX, OriginalPlatPos.y + WantedLimitPointY, 0);
-                //}
-                //if (MouseDifference.x <= 0 && MouseDifference.y <= 0)
-                //{
-                //    gameObject.transform.position = new Vector3(OriginalPlatPos.x - WantedLimitPointX, OriginalPlatPos.y - WantedLimitPointY, 0);
-                //}
-
-                //to use velocity instead of transform.position
-                if (MouseDifference.x >= 0 && MouseDifference.y >= 0)
-                {
-                    WantedPlatPos = new Vector3(OriginalPlatPos.x + WantedLimitPointX, OriginalPlatPos.y + WantedLimitPointY, 0);
-                }
-                if (MouseDifference.x >= 0 && MouseDifference.y <= 0)
-                {
-                    WantedPlatPos = new Vector3(OriginalPlatPos.x + WantedLimitPointX, OriginalPlatPos.y - WantedLimitPointY, 0);
-                }
-                if (MouseDifference.x <= 0 && MouseDifference.y >= 0)
-                {
-                    WantedPlatPos = new Vector3(OriginalPlatPos.x - WantedLimitPointX, OriginalPlatPos.y + WantedLimitPointY, 0);
-                }
-                if (MouseDifference.x <= 0 && MouseDifference.y <= 0)
-                {
-                    WantedPlatPos = new Vector3(OriginalPlatPos.x - WantedLimitPointX, OriginalPlatPos.y - WantedLimitPointY, 0);
-                }
-
-                rb.velocity = new Vector3(WantedPlatPos.x - CurrentPlatPos.x, WantedPlatPos.y - CurrentPlatPos.y, 0) * 10; //10 is the speed?
-            }
+            rb.velocity = (WantedPlatPos - CurrentPlatPos) * 20;
         }
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0)) //get shot
         {
             shot = true;
             radius.GetComponent<SpriteRenderer>().enabled = false; //enable sprite renderer

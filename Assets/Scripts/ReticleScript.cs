@@ -6,7 +6,6 @@ public class ReticleScript : MonoBehaviour
 {
     Vector3 OriginalPlatPos, WantedPlatPos, OriginalMousePos, CurrentMousePos, MouseDifference, PlatDifference, CurrentPlatPos, TurnBackSpeed;
     Rigidbody2D rb;
-    bool shot;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +19,6 @@ public class ReticleScript : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0)) //take mouse position then enable the sprite renderer
         {
-            shot = false;
             OriginalMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition); //Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
 
@@ -36,28 +34,27 @@ public class ReticleScript : MonoBehaviour
 
             if (rb.velocity.x > 20)
             {
-                rb.velocity = new Vector3(20, rb.velocity.y, 0); 
+                rb.velocity = new Vector3(rb.velocity.x / 2, rb.velocity.y / 2, 0);
             }
             if (rb.velocity.y > 20)
             {
-                rb.velocity = new Vector3(rb.velocity.x, 20, 0);
+                rb.velocity = new Vector3(rb.velocity.x / 2, rb.velocity.y / 2, 0);
             }
             if (rb.velocity.x > 20)
             {
-                rb.velocity = new Vector3(20, rb.velocity.y, 0);
+                rb.velocity = new Vector3(rb.velocity.x / 2, rb.velocity.y / 2, 0);
             }
-
             if (rb.velocity.x < -20)
             {
-                rb.velocity = new Vector3(-20, rb.velocity.y, 0);
+                rb.velocity = new Vector3(rb.velocity.x / 2, rb.velocity.y / 2, 0);
             }
             if (rb.velocity.y < -20)
             {
-                rb.velocity = new Vector3(rb.velocity.x, -20, 0);
+                rb.velocity = new Vector3(rb.velocity.x / 2, rb.velocity.y / 2, 0);
             }
             if (rb.velocity.x < -20)
             {
-                rb.velocity = new Vector3(-20, rb.velocity.y, 0);
+                rb.velocity = new Vector3(rb.velocity.x / 2, rb.velocity.y / 2, 0);
             }
         }
 
