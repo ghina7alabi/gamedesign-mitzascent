@@ -9,8 +9,7 @@ public class StickyScript : MonoBehaviour
     Vector3 OriginalPlatPos, WantedPlatPos, OriginalMousePos, CurrentMousePos, MouseDifference, PlatDifference, CurrentPlatPos, TurnBackSpeed;
     bool shot, charSticked;
 
-    float WantedLimitPointX, WantedLimitPointY;
-    float thex, they;
+    public float originalSpeed = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -50,16 +49,16 @@ public class StickyScript : MonoBehaviour
                 shot = true;
                 radius.GetComponent<SpriteRenderer>().enabled = false; //enable sprite renderer
                 rb.velocity = new Vector3(0, 0, 0); //stop velocity
-                TurnBackSpeed = new Vector3(OriginalPlatPos.x - CurrentPlatPos.x, OriginalPlatPos.y - CurrentPlatPos.y) * 10;
-                //if (PlayerController.canIncreasePlatformSpeed)
-                //{
-                //    rb.velocity = TurnBackSpeed*10; //with powerup
-                //    PlayerController.canIncreasePlatformSpeed = false;
-                //}
-                //else
-                //{
-                rb.velocity = TurnBackSpeed; //without powerup
-                                             //}
+                TurnBackSpeed = new Vector3(OriginalPlatPos.x - CurrentPlatPos.x, OriginalPlatPos.y - CurrentPlatPos.y) * originalSpeed;
+
+                if (PlayerController.platformSpeedUp)
+                {
+                    rb.velocity = TurnBackSpeed * 1.3f;
+                }
+                else
+                {
+                    rb.velocity = TurnBackSpeed;
+                }
             }
         }
         if (Input.GetMouseButtonUp(0))

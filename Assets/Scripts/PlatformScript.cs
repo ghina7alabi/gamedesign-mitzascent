@@ -8,10 +8,8 @@ public class PlatformScript : MonoBehaviour
     Rigidbody2D rb; //rb of the tiny circle
     Vector3 OriginalPlatPos, WantedPlatPos, OriginalMousePos, CurrentMousePos, MouseDifference, PlatDifference, CurrentPlatPos, TurnBackSpeed;
     bool shot;
-    public static bool platformSpeedUp;
 
-    float WantedLimitPointX, WantedLimitPointY;
-    float thex, they;
+    public float originalSpeed = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +17,6 @@ public class PlatformScript : MonoBehaviour
         rb = this.gameObject.GetComponent<Rigidbody2D>();
         OriginalPlatPos = this.gameObject.transform.position;
         shot = false;
-        platformSpeedUp = false;
     }
 
     // Update is called once per frame
@@ -43,12 +40,11 @@ public class PlatformScript : MonoBehaviour
             shot = true;
             radius.GetComponent<SpriteRenderer>().enabled = false; //enable sprite renderer
             rb.velocity = new Vector3(0, 0, 0); //stop velocity
-            TurnBackSpeed = new Vector3(OriginalPlatPos.x - CurrentPlatPos.x, OriginalPlatPos.y - CurrentPlatPos.y) * 10; 
+            TurnBackSpeed = new Vector3(OriginalPlatPos.x - CurrentPlatPos.x, OriginalPlatPos.y - CurrentPlatPos.y) * originalSpeed; 
 
-            if (platformSpeedUp)
+            if (PlayerController.platformSpeedUp)
             {
-                platformSpeedUp = false;
-                rb.velocity = TurnBackSpeed * 2;
+                rb.velocity = TurnBackSpeed * 1.3f;
             }
             else
             {
@@ -64,6 +60,7 @@ public class PlatformScript : MonoBehaviour
             shot = false;
             rb.velocity = new Vector3(0, 0, 0);
             this.gameObject.transform.position = OriginalPlatPos;
+            PlayerController.platformSpeedUp = false;
         }
     }
 

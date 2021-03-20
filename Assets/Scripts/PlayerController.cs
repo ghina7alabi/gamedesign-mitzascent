@@ -17,12 +17,12 @@ public class PlayerController : MonoBehaviour
     float horizontalMove = 0f;
     
 
-    bool onPlatform, mouseClicked, canMove;
+    bool onPlatform, mouseClicked, canMove, canRewind, canStop, canSpeedUp, canDoubleJump;
 
 
     private bool m_FacingRight = true;
 
-    public static bool playerSticked;
+    public static bool playerSticked, platformSpeedUp;
 
     public static int fallingDistancePoints = 100, climbingDistancePoints = 100;
     Vector3 stablePosition;
@@ -56,6 +56,11 @@ public class PlayerController : MonoBehaviour
             OnLandEvent = new UnityEvent();
 
         nearNPC = false;
+        canRewind = false;
+        canStop = false;
+        canDoubleJump = false;
+        canSpeedUp = false;
+        platformSpeedUp = false;
     }
 
     // Update is called once per frame
@@ -74,6 +79,12 @@ public class PlayerController : MonoBehaviour
         {
             playerRB.AddForce(transform.up * thrust, ForceMode2D.Impulse);
             animator.SetBool("isJumping", true);
+        }
+        if (Input.GetKeyDown(KeyCode.W) && !onPlatform && !canMove && canDoubleJump)
+        {
+            playerRB.AddForce(transform.up * thrust, ForceMode2D.Impulse);
+            animator.SetBool("isJumping", true);
+            canDoubleJump = false;
         }
 
         if (Input.GetMouseButtonDown(0))
@@ -97,48 +108,43 @@ public class PlayerController : MonoBehaviour
 
 
         //powerups
-        if (Input.GetKeyDown(KeyCode.Alpha1) && powerUpTaken[0]) //rewind
+        if (Input.GetKeyDown(KeyCode.Alpha1) && canRewind) //rewind
         {
-            UsePowerup(0);
             transform.position = rewindPosition;
+            canRewind = false;
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2) && powerUpTaken[1]) //stop midair
+        else if (Input.GetKeyDown(KeyCode.Alpha2) && canStop) //stop midair
         {
             playerRB.velocity = Vector3.zero;
-            UsePowerup(1);
+            canStop = false;
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha3) && powerUpTaken[2])
+        else if (Input.GetKeyDown(KeyCode.Alpha3) && canSpeedUp)
         {
-            PlatformScript.platformSpeedUp = true;
-            UsePowerup(2);
-        }
-        if (Input.GetKeyDown(KeyCode.W) && onPlatform && powerUpTaken[3]) //doublejump
-        {
-            UsePowerup(3);
+            platformSpeedUp = true;
+            canSpeedUp = false;
         }
 
 
 
-        if (nearNPC && !NarrationManager.instance.isPlaying)
+        if (nearNPC && !NarrationManager.instance.isPlaying) // && have required amount of points
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                PowerupUIController(0);
+                canRewind = true;
             }
             else if (Input.GetKeyDown(KeyCode.Alpha2))
             {
-                PowerupUIController(1);
+                canStop = true;
             }
             else if (Input.GetKeyDown(KeyCode.Alpha3))
             {
-                PowerupUIController(2);
+                canSpeedUp = true;
             }
             else if (Input.GetKeyDown(KeyCode.Alpha4)) //double jump
             {
-                PowerupUIController(3);
+                canDoubleJump = true;
             }
         }
-
 
         //animation
 
@@ -211,7 +217,7 @@ public class PlayerController : MonoBehaviour
             onPlatform = false;
             canMove = false;
 
-            if (powerUpTaken[0]) //rewind
+            if (canRewind) //rewind
             {
                 rewindPosition = transform.position;
             }    
