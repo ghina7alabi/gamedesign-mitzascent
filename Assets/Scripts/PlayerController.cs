@@ -18,16 +18,20 @@ public class PlayerController : MonoBehaviour
     
 
     bool onPlatform, mouseClicked, canMove;
-    bool canDoubleJump, canMidair; //powerup booleans
-    public static bool canIncreasePlatformSpeed; //powerup booleans
+
+
     private bool m_FacingRight = true;
 
     public static bool playerSticked;
 
-    int fallingDistancePoints, climbingDistancePoints;
+    public static int fallingDistancePoints, climbingDistancePoints;
     Vector3 stablePosition;
     public TextMeshProUGUI fallingPointsText, climbingPointsText;
-    public Image doubleJumpUI, platformSpeedUI, midairStopUI;
+
+    //powerups
+    bool[] powerUpTaken = new bool[4];
+    public GameObject[] powerupUI;
+    GameObject npcInRange;
 
 
     [Header("Events")]
@@ -38,14 +42,13 @@ public class PlayerController : MonoBehaviour
     [System.Serializable]
     public class BoolEvent : UnityEvent<bool> { }
 
-
-
         
     // Start is called before the first frame update
     void Awake()
     {
         playerRB = GetComponent<Rigidbody2D>();
         stablePosition = gameObject.transform.position;
+
         if (OnLandEvent == null)
             OnLandEvent = new UnityEvent();
     }
@@ -61,17 +64,11 @@ public class PlayerController : MonoBehaviour
             float horizontal = Input.GetAxis("Horizontal");
             playerRB.velocity = new Vector2(horizontal, playerRB.velocity.y / walkSpeed) * walkSpeed;
         }
+
         if (Input.GetKeyDown(KeyCode.W))// && onPlatform && canMove)
         {
             playerRB.AddForce(transform.up * thrust, ForceMode2D.Impulse);
             animator.SetBool("isJumping", true);
-        }
-        if (Input.GetKeyDown(KeyCode.W) && !onPlatform && canDoubleJump)
-        {
-            playerRB.AddForce(transform.up * thrust, ForceMode2D.Impulse);
-            canDoubleJump = false;
-            doubleJumpUI.color = new Color(1, 1, 1, 0.3f); //disappear
-            
         }
 
         if (Input.GetMouseButtonDown(0))
@@ -79,14 +76,10 @@ public class PlayerController : MonoBehaviour
             mouseClicked = true;
             canMove = false;
         }
+
         if (Input.GetMouseButtonUp(0))
         {
             mouseClicked = false;
-            if (canIncreasePlatformSpeed)
-            {
-                platformSpeedUI.color = new Color(1, 1, 1, 0.3f); //disappear
-                canIncreasePlatformSpeed = false;
-            }
 
         }
 
@@ -96,15 +89,17 @@ public class PlayerController : MonoBehaviour
             stablePosition = gameObject.transform.position;
         }
 
-        if (!onPlatform && !canMove && canMidair)
+        //powerups
+        if (Input.GetKeyDown(KeyCode.W) && onPlatform && powerUpTaken[0]) //doublejump
         {
-            midairStopUI.color = new Color(1, 1, 1, 0.3f); //disappear
-            canMove = true;
-            canMidair = false;
+            UsePowerup(0);
         }
 
+
+        //animation
+
         // If the input is moving the player right and the player is facing left...
-      if (horizontalMove > 0 && !m_FacingRight)
+        if (horizontalMove > 0 && !m_FacingRight)
         {
             // ... flip the player.
           Flip();
@@ -125,16 +120,18 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Base")
         {
+            onPlatform = true; 
+
             if (stablePosition.y > gameObject.transform.position.y + 5)
             {
                 fallingDistancePoints  += (int)(stablePosition.y-gameObject.transform.position.y);
-                fallingPointsText.text = "Falling Points: " + fallingDistancePoints;
+                fallingPointsText.text = "" + fallingDistancePoints;
             }
 
             if (stablePosition.y < gameObject.transform.position.y - 4)
             {
                 climbingDistancePoints += (int)(gameObject.transform.position.y - stablePosition.y);
-                climbingPointsText.text = "Climbing Points: " + climbingDistancePoints;
+                climbingPointsText.text = "" + climbingDistancePoints;
             }
 
             OnLanding();
@@ -174,45 +171,18 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "NPC")
+
+        if (collision.gameObject.tag == "NPC" && !NarrationManager.instance.isPlaying)
         {
-            if (!NarrationManager.instance.isPlaying)
+            npcInRange = collision.gameObject;
+
+            if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                if (Input.GetKeyDown(KeyCode.Alpha1) && fallingDistancePoints >= 10 && !canDoubleJump)
-                {
-                    Debug.Log("Take a double jump");
-                    fallingDistancePoints -= 10;
-                    fallingPointsText.text = "Falling Points: " + fallingDistancePoints;
-
-                    canDoubleJump = true;
-                    doubleJumpUI.color = new Color(1, 1, 1, 1); //appear
-
-                    
-                }
-
-                if (Input.GetKeyDown(KeyCode.Alpha2) && fallingDistancePoints >= 10 && !canIncreasePlatformSpeed)
-                {
-                    Debug.Log("Change platform speeds");
-                    fallingDistancePoints -= 10;
-                    fallingPointsText.text = "Falling Points: " + fallingDistancePoints;
-
-                    canIncreasePlatformSpeed = true;
-                    platformSpeedUI.color = new Color(1, 1, 1, 1); //appear
-                }
-
-                if (Input.GetKeyDown(KeyCode.Alpha3) && fallingDistancePoints >= 10 && !canMidair)
-                {
-                    Debug.Log("Midair Stop");
-                    fallingDistancePoints -= 10;
-                    fallingPointsText.text = "Falling Points: " + fallingDistancePoints;
-
-                    canMidair = true;
-                    midairStopUI.color = new Color(1, 1, 1, 1); //appear
-                }
+                PowerupUIController(0);
             }
+
         }
     }
-
 
     public void OnLanding()
     {
@@ -227,6 +197,35 @@ public class PlayerController : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
+    }
+
+
+    void PowerupUIController(int index)
+    {
+        if (fallingDistancePoints >= 1 && !powerUpTaken[index])
+        {
+            powerUpTaken[index] = true;
+            powerupUI[index].GetComponent<RectTransform>().sizeDelta = new Vector2(65, 65);
+            NarrationManager.instance.PlayNarration(npcInRange.GetComponent<NPCController>().powerupSpeech);
+            fallingDistancePoints -= 1; //change this num later
+            fallingPointsText.text = "" + fallingDistancePoints;
+        }
+        if (fallingDistancePoints <= 1 || powerUpTaken[index])
+        {
+            NarrationManager.instance.PlayNarration(npcInRange.GetComponent<NPCController>().notEnoughSpeech);
+        }
+    }
+
+
+    void UsePowerup(int index)
+    {
+        if (index == 0) //double jump
+        {
+            playerRB.AddForce(transform.up * thrust, ForceMode2D.Impulse);
+            powerupUI[index].GetComponent<RectTransform>().sizeDelta = new Vector2(55, 55);
+            powerUpTaken[0] = false;
+        }
+
     }
 
 }
