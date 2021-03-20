@@ -24,12 +24,14 @@ public class PlayerController : MonoBehaviour
 
     public static bool playerSticked;
 
-    public static int fallingDistancePoints, climbingDistancePoints;
+    public static int fallingDistancePoints = 100, climbingDistancePoints = 100;
     Vector3 stablePosition;
     public TextMeshProUGUI fallingPointsText, climbingPointsText;
 
     //powerups
-    bool[] powerUpTaken = new bool[4];
+    public static bool[] powerUpTaken = new bool[4];
+    public static bool[] powerUpActivated = new bool[3];
+    Vector3 rewindPosition;
     public GameObject[] powerupUI;
     GameObject npcInRange;
 
@@ -59,13 +61,13 @@ public class PlayerController : MonoBehaviour
         horizontalMove = Input.GetAxisRaw("Horizontal") * walkSpeed;
         animator.SetFloat("speed", Mathf.Abs(horizontalMove));
 
-        if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)))// && canMove) 
+        if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && canMove)
         {
             float horizontal = Input.GetAxis("Horizontal");
             playerRB.velocity = new Vector2(horizontal, playerRB.velocity.y / walkSpeed) * walkSpeed;
         }
 
-        if (Input.GetKeyDown(KeyCode.W))// && onPlatform && canMove)
+        if (Input.GetKeyDown(KeyCode.W) && onPlatform && canMove)
         {
             playerRB.AddForce(transform.up * thrust, ForceMode2D.Impulse);
             animator.SetBool("isJumping", true);
@@ -90,9 +92,24 @@ public class PlayerController : MonoBehaviour
         }
 
         //powerups
-        if (Input.GetKeyDown(KeyCode.W) && onPlatform && powerUpTaken[0]) //doublejump
+        if (Input.GetKeyDown(KeyCode.Alpha1) && powerUpTaken[0]) //rewind
         {
             UsePowerup(0);
+            transform.position = rewindPosition;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2) && powerUpTaken[1]) //stop midair
+        {
+            playerRB.velocity = Vector3.zero;
+            UsePowerup(1);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3) && powerUpTaken[2])
+        {
+            PlatformScript.platformSpeedUp = true;
+            UsePowerup(2);
+        }
+        if (Input.GetKeyDown(KeyCode.W) && onPlatform && powerUpTaken[3]) //doublejump
+        {
+            UsePowerup(3);
         }
 
 
@@ -166,6 +183,11 @@ public class PlayerController : MonoBehaviour
         {
             onPlatform = false;
             canMove = false;
+
+            if (powerUpTaken[0]) //rewind
+            {
+                rewindPosition = transform.position;
+            }    
         }
     }
 
@@ -180,7 +202,18 @@ public class PlayerController : MonoBehaviour
             {
                 PowerupUIController(0);
             }
-
+            else if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                PowerupUIController(1);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                PowerupUIController(2);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha4)) //double jump
+            {
+                PowerupUIController(3);
+            }
         }
     }
 
@@ -219,13 +252,28 @@ public class PlayerController : MonoBehaviour
 
     void UsePowerup(int index)
     {
-        if (index == 0) //double jump
+        
+        if (index == 0) //rewind
         {
-            playerRB.AddForce(transform.up * thrust, ForceMode2D.Impulse);
             powerupUI[index].GetComponent<RectTransform>().sizeDelta = new Vector2(55, 55);
             powerUpTaken[0] = false;
         }
-
+        else if (index == 1) //midair
+        {
+            powerupUI[index].GetComponent<RectTransform>().sizeDelta = new Vector2(55, 55);
+            powerUpTaken[1] = false;
+        }
+        else if (index == 2) //platform speed up
+        {
+            powerupUI[index].GetComponent<RectTransform>().sizeDelta = new Vector2(55, 55);
+            powerUpTaken[2] = false;
+        }
+        else if (index == 3) //double jump
+        {
+            playerRB.AddForce(transform.up * thrust, ForceMode2D.Impulse);
+            powerupUI[index].GetComponent<RectTransform>().sizeDelta = new Vector2(55, 55);
+            powerUpTaken[3] = false;
+        }
     }
 
 }
