@@ -7,7 +7,8 @@ public class PlatformScript : MonoBehaviour
     public GameObject radius, reticle; //sprite radius
     Rigidbody2D rb; //rb of the tiny circle
     Vector3 OriginalPlatPos, WantedPlatPos, OriginalMousePos, CurrentMousePos, MouseDifference, PlatDifference, CurrentPlatPos, TurnBackSpeed;
-    public static bool shot, platformSpeedUp;
+    bool shot;
+    public static bool platformSpeedUp;
 
     float WantedLimitPointX, WantedLimitPointY;
     float thex, they;
