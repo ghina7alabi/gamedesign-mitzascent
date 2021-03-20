@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
     Vector3 rewindPosition;
     public GameObject[] powerupUI;
     GameObject npcInRange;
+    bool nearNPC;
 
 
     [Header("Events")]
@@ -53,6 +54,8 @@ public class PlayerController : MonoBehaviour
 
         if (OnLandEvent == null)
             OnLandEvent = new UnityEvent();
+
+        nearNPC = false;
     }
 
     // Update is called once per frame
@@ -91,6 +94,8 @@ public class PlayerController : MonoBehaviour
             stablePosition = gameObject.transform.position;
         }
 
+
+
         //powerups
         if (Input.GetKeyDown(KeyCode.Alpha1) && powerUpTaken[0]) //rewind
         {
@@ -110,6 +115,28 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W) && onPlatform && powerUpTaken[3]) //doublejump
         {
             UsePowerup(3);
+        }
+
+
+
+        if (nearNPC && !NarrationManager.instance.isPlaying)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                PowerupUIController(0);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                PowerupUIController(1);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                PowerupUIController(2);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha4)) //double jump
+            {
+                PowerupUIController(3);
+            }
         }
 
 
@@ -194,26 +221,18 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
 
-        if (collision.gameObject.tag == "NPC" && !NarrationManager.instance.isPlaying)
+        if (collision.gameObject.tag == "NPC")
         {
+            nearNPC = true;
             npcInRange = collision.gameObject;
+        }
+    }
 
-            if (Input.GetKeyDown(KeyCode.Alpha1))
-            {
-                PowerupUIController(0);
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha2))
-            {
-                PowerupUIController(1);
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha3))
-            {
-                PowerupUIController(2);
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha4)) //double jump
-            {
-                PowerupUIController(3);
-            }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "NPC")
+        {
+            nearNPC = false;
         }
     }
 
