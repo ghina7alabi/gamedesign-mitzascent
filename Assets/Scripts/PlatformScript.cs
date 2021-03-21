@@ -9,7 +9,7 @@ public class PlatformScript : MonoBehaviour
     Vector3 OriginalPlatPos, WantedPlatPos, OriginalMousePos, CurrentMousePos, MouseDifference, PlatDifference, CurrentPlatPos, TurnBackSpeed;
     bool shot;
 
-    public float originalSpeed = 10;
+    public float originalSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +17,7 @@ public class PlatformScript : MonoBehaviour
         rb = this.gameObject.GetComponent<Rigidbody2D>();
         OriginalPlatPos = this.gameObject.transform.position;
         shot = false;
+        originalSpeed = 10;
     }
 
     // Update is called once per frame
