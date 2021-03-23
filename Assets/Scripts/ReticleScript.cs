@@ -16,7 +16,7 @@ public class ReticleScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (Input.GetMouseButtonDown(0)) //take mouse position then enable the sprite renderer
         {
@@ -34,27 +34,7 @@ public class ReticleScript : MonoBehaviour
             rb.velocity = (WantedPlatPos - CurrentPlatPos) * 10;
             //rb.velocity = new Vector3(((WantedPlatPos.x - CurrentPlatPos.x)*(1920/1080)), ((WantedPlatPos.y - CurrentPlatPos.y)*(1080/1920)), 0);
 
-            if (rb.velocity.x > 20)
-            {
-                rb.velocity = new Vector3(rb.velocity.x / 2, rb.velocity.y / 2, 0);
-            }
-            if (rb.velocity.y > 20)
-            {
-                rb.velocity = new Vector3(rb.velocity.x / 2, rb.velocity.y / 2, 0);
-            }
-            if (rb.velocity.x > 20)
-            {
-                rb.velocity = new Vector3(rb.velocity.x / 2, rb.velocity.y / 2, 0);
-            }
-            if (rb.velocity.x < -20)
-            {
-                rb.velocity = new Vector3(rb.velocity.x / 2, rb.velocity.y / 2, 0);
-            }
-            if (rb.velocity.y < -20)
-            {
-                rb.velocity = new Vector3(rb.velocity.x / 2, rb.velocity.y / 2, 0);
-            }
-            if (rb.velocity.x < -20)
+            if (rb.velocity.x > 20 || rb.velocity.x < -20 || rb.velocity.y > 20 || rb.velocity.y < -20)
             {
                 rb.velocity = new Vector3(rb.velocity.x / 2, rb.velocity.y / 2, 0);
             }

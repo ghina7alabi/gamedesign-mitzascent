@@ -21,7 +21,7 @@ public class PlatformScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (Input.GetMouseButtonDown(0)) //enable the sprite renderer, set shot false
         {
@@ -72,6 +72,18 @@ public class PlatformScript : MonoBehaviour
             shot = false;
             rb.velocity = new Vector3(0, 0, 0);
             this.gameObject.transform.position = OriginalPlatPos;
+        }
+    }
+
+    //this was added for testing and may be removed
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Center" && shot == true)
+        {
+            shot = false;
+            rb.velocity = new Vector3(0, 0, 0);
+            this.gameObject.transform.position = OriginalPlatPos;
+            PlayerController.platformSpeedUp = false;
         }
     }
 }

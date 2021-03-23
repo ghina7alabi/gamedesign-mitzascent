@@ -64,26 +64,27 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * walkSpeed;
         animator.SetFloat("speed", Mathf.Abs(horizontalMove));
 
-        if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && canMove)
+        if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))) // && canMove
         {
             float horizontal = Input.GetAxis("Horizontal");
             playerRB.velocity = new Vector2(horizontal, playerRB.velocity.y / walkSpeed) * walkSpeed;
         }
 
-        if (Input.GetKeyDown(KeyCode.W) && onPlatform && canMove)
+        if (Input.GetKeyDown(KeyCode.W) && onPlatform) // && canMove
         {
             playerRB.AddForce(transform.up * thrust, ForceMode2D.Impulse);
             animator.SetBool("isJumping", true);
         }
-        if (Input.GetKeyDown(KeyCode.W) && !onPlatform && !canMove && canDoubleJump)
+        if (Input.GetKeyDown(KeyCode.W) && !onPlatform && canDoubleJump) //&& !canMove 
         {
             playerRB.AddForce(transform.up * thrust, ForceMode2D.Impulse);
             animator.SetBool("isJumping", true);
+            powerupUI[3].GetComponent<RectTransform>().sizeDelta = new Vector2(55, 55);
             canDoubleJump = false;
         }
 
@@ -111,16 +112,19 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1) && canRewind) //rewind
         {
             transform.position = rewindPosition;
+            powerupUI[0].GetComponent<RectTransform>().sizeDelta = new Vector2(55, 55);
             canRewind = false;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2) && canStop) //stop midair
         {
             playerRB.velocity = Vector3.zero;
+            powerupUI[1].GetComponent<RectTransform>().sizeDelta = new Vector2(55, 55);
             canStop = false;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3) && canSpeedUp)
         {
             platformSpeedUp = true;
+            powerupUI[2].GetComponent<RectTransform>().sizeDelta = new Vector2(55, 55);
             canSpeedUp = false;
         }
 
@@ -131,18 +135,22 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
                 canRewind = true;
+                powerupUI[0].GetComponent<RectTransform>().sizeDelta = new Vector2(65, 65);
             }
             else if (Input.GetKeyDown(KeyCode.Alpha2))
             {
                 canStop = true;
+                powerupUI[1].GetComponent<RectTransform>().sizeDelta = new Vector2(65, 65);
             }
             else if (Input.GetKeyDown(KeyCode.Alpha3))
             {
                 canSpeedUp = true;
+                powerupUI[2].GetComponent<RectTransform>().sizeDelta = new Vector2(65, 65);
             }
             else if (Input.GetKeyDown(KeyCode.Alpha4)) //double jump
             {
                 canDoubleJump = true;
+                powerupUI[3].GetComponent<RectTransform>().sizeDelta = new Vector2(65, 65);
             }
         }
 
@@ -264,6 +272,7 @@ public class PlayerController : MonoBehaviour
         {
             powerUpTaken[index] = true;
             powerupUI[index].GetComponent<RectTransform>().sizeDelta = new Vector2(65, 65);
+
             NarrationManager.instance.PlayNarration(npcInRange.GetComponent<NPCController>().powerupSpeech);
             fallingDistancePoints -= 1; //change this num later
             fallingPointsText.text = "" + fallingDistancePoints;
@@ -271,33 +280,6 @@ public class PlayerController : MonoBehaviour
         if (fallingDistancePoints <= 1 || powerUpTaken[index])
         {
             NarrationManager.instance.PlayNarration(npcInRange.GetComponent<NPCController>().notEnoughSpeech);
-        }
-    }
-
-
-    void UsePowerup(int index)
-    {
-        
-        if (index == 0) //rewind
-        {
-            powerupUI[index].GetComponent<RectTransform>().sizeDelta = new Vector2(55, 55);
-            powerUpTaken[0] = false;
-        }
-        else if (index == 1) //midair
-        {
-            powerupUI[index].GetComponent<RectTransform>().sizeDelta = new Vector2(55, 55);
-            powerUpTaken[1] = false;
-        }
-        else if (index == 2) //platform speed up
-        {
-            powerupUI[index].GetComponent<RectTransform>().sizeDelta = new Vector2(55, 55);
-            powerUpTaken[2] = false;
-        }
-        else if (index == 3) //double jump
-        {
-            playerRB.AddForce(transform.up * thrust, ForceMode2D.Impulse);
-            powerupUI[index].GetComponent<RectTransform>().sizeDelta = new Vector2(55, 55);
-            powerUpTaken[3] = false;
         }
     }
 
