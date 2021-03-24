@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * walkSpeed;
         animator.SetFloat("speed", Mathf.Abs(horizontalMove));
@@ -97,7 +97,6 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             mouseClicked = false;
-
         }
 
         //DistancePoints
@@ -105,8 +104,10 @@ public class PlayerController : MonoBehaviour
         {
             stablePosition = gameObject.transform.position;
         }
-
-
+        if (!onPlatform && playerRB.velocity.y != 0 && !Input.GetMouseButton(0))
+        {
+            animator.SetBool("isJumping", true);
+        }
 
         //powerups
         if (Input.GetKeyDown(KeyCode.Alpha1) && canRewind) //rewind

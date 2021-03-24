@@ -675,6 +675,10 @@ PrefabInstance:
       propertyPath: rotation.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 352304b7fbe11f445970df6ae36e6227, type: 3}
+      propertyPath: simulationSpeed
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 352304b7fbe11f445970df6ae36e6227, type: 3}
 --- !u!4 &2048717612498625798 stripped
@@ -759,10 +763,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: 352304b7fbe11f445970df6ae36e6227, type: 3}
       propertyPath: autoRandomSeed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800000, guid: 352304b7fbe11f445970df6ae36e6227, type: 3}
-      propertyPath: simulationSpeed
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: 352304b7fbe11f445970df6ae36e6227, type: 3}
