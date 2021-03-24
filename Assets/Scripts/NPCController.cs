@@ -12,6 +12,9 @@ public class NPCController : MonoBehaviour
 
     public bool playedInitialSpeech;
 
+    public GameObject pressSpacePrompt;
+    bool nearPlayer;
+
 
     // Start is called before the first frame update
     void Start()
@@ -22,21 +25,37 @@ public class NPCController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (nearPlayer & Input.GetKeyDown(KeyCode.Return))
+        {
+            if (!playedInitialSpeech)
+            {
+                NarrationManager.instance.PlayNarration(initialSpeech);
+                playedInitialSpeech = true;
+            }
+            else if (playedInitialSpeech)
+            {
+                NarrationManager.instance.PlayNarration(repetitiveSpeech);
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player" && !playedInitialSpeech)
+        if (collision.gameObject.tag == "Player")
         {
-            NarrationManager.instance.PlayNarration(initialSpeech);
-            playedInitialSpeech = true;
-        }
-        else if (collision.gameObject.tag == "Player" && playedInitialSpeech)
-        {
-            NarrationManager.instance.PlayNarration(repetitiveSpeech);
+            pressSpacePrompt.SetActive(true);
+            nearPlayer = true;
         }
     }
 
-   
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            pressSpacePrompt.SetActive(false);
+            nearPlayer = false;
+        }
+    }
+
 }

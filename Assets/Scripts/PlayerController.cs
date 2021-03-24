@@ -18,14 +18,16 @@ public class PlayerController : MonoBehaviour
     public GameObject[] powerEffect;
     
 
-    bool onPlatform, mouseClicked, canMove, canRewind, canStop, canSpeedUp, canDoubleJump;
+    bool onPlatform, mouseClicked, canMove;
+
+    static bool canRewind, canStop, canSpeedUp, canDoubleJump;
 
 
     private bool m_FacingRight = true;
 
     public static bool playerSticked, platformSpeedUp;
 
-    public static int fallingDistancePoints = 100, climbingDistancePoints = 100;
+    public static int fallingDistancePoints = 0, climbingDistancePoints = 0;
     Vector3 stablePosition;
     public TextMeshProUGUI fallingPointsText, climbingPointsText;
 
@@ -137,34 +139,37 @@ public class PlayerController : MonoBehaviour
 
 
 
-        if (nearNPC && !NarrationManager.instance.isPlaying) // && have required amount of points
+        if (nearNPC && !NarrationManager.instance.isPlaying && fallingDistancePoints >= 5) // && have required amount of points
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
+            if (Input.GetKeyDown(KeyCode.Alpha1) && !canRewind)
             {
                 canRewind = true;
-                powerupUI[0].GetComponent<RectTransform>().sizeDelta = new Vector2(65, 65);
+                PowerupUIController(0);
             }
-            else if (Input.GetKeyDown(KeyCode.Alpha2))
+            else if (Input.GetKeyDown(KeyCode.Alpha2) && !canStop)
             {
                 canStop = true;
-                powerupUI[1].GetComponent<RectTransform>().sizeDelta = new Vector2(65, 65);
+                PowerupUIController(1);
             }
-            else if (Input.GetKeyDown(KeyCode.Alpha3))
+            else if (Input.GetKeyDown(KeyCode.Alpha3) && !canSpeedUp)
             {
                 canSpeedUp = true;
-                powerupUI[2].GetComponent<RectTransform>().sizeDelta = new Vector2(65, 65);
+                PowerupUIController(2);
             }
-            else if (Input.GetKeyDown(KeyCode.Alpha4)) //double jump
+            else if (Input.GetKeyDown(KeyCode.Alpha4) && !canDoubleJump) //double jump
             {
                 canDoubleJump = true;
-                powerupUI[3].GetComponent<RectTransform>().sizeDelta = new Vector2(65, 65);
+                PowerupUIController(3);
             }
         }
+        //else if (nearNPC && !NarrationManager.instance.isPlaying && fallingDistancePoints <= 5)
+        //{
+        //    NarrationManager.instance.PlayNarration(npcInRange.GetComponent<NPCController>().notEnoughSpeech);
+        //}
 
-        //animation
-
-        // If the input is moving the player right and the player is facing left...
-        if (horizontalMove > 0 && !m_FacingRight)
+            //animation
+            // If the input is moving the player right and the player is facing left...
+            if (horizontalMove > 0 && !m_FacingRight)
         {
             // ... flip the player.
           Flip();
@@ -284,19 +289,10 @@ public class PlayerController : MonoBehaviour
 
     void PowerupUIController(int index)
     {
-        if (fallingDistancePoints >= 1 && !powerUpTaken[index])
-        {
-            powerUpTaken[index] = true;
-            powerupUI[index].GetComponent<RectTransform>().sizeDelta = new Vector2(65, 65);
-
-            NarrationManager.instance.PlayNarration(npcInRange.GetComponent<NPCController>().powerupSpeech);
-            fallingDistancePoints -= 1; //change this num later
-            fallingPointsText.text = "" + fallingDistancePoints;
-        }
-        if (fallingDistancePoints <= 1 || powerUpTaken[index])
-        {
-            NarrationManager.instance.PlayNarration(npcInRange.GetComponent<NPCController>().notEnoughSpeech);
-        }
+        powerupUI[index].GetComponent<RectTransform>().sizeDelta = new Vector2(65, 65);
+        NarrationManager.instance.PlayNarration(npcInRange.GetComponent<NPCController>().powerupSpeech);
+        fallingDistancePoints -= 5;
+        fallingPointsText.text = "" + fallingDistancePoints;
     }
 
 }
