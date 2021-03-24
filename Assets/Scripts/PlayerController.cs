@@ -64,6 +64,8 @@ public class PlayerController : MonoBehaviour
         canDoubleJump = false;
         canSpeedUp = false;
         platformSpeedUp = false;
+
+        Application.targetFrameRate = 45;
     }
 
     // Update is called once per frame
