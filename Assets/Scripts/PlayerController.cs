@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public static float sticktimer;
     public Animator animator;
     float horizontalMove = 0f;
+    public GameObject[] powerEffect;
     
 
     bool onPlatform, mouseClicked, canMove, canRewind, canStop, canSpeedUp, canDoubleJump;
@@ -92,11 +93,16 @@ public class PlayerController : MonoBehaviour
         {
             mouseClicked = true;
             canMove = false;
+            animator.SetBool("isPower", true);
+            StartCoroutine(WaitForEffect(0.6f));
         }
 
         if (Input.GetMouseButtonUp(0))
         {
             mouseClicked = false;
+            animator.SetBool("isPower", false);
+            powerEffect[0].SetActive(false);
+            powerEffect[1].SetActive(false);
         }
 
         //DistancePoints
@@ -266,6 +272,15 @@ public class PlayerController : MonoBehaviour
         transform.localScale = theScale;
     }
 
+    IEnumerator WaitForEffect(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        if(animator.GetCurrentAnimatorStateInfo(0).IsName("mitzPower"))
+        {
+            powerEffect[0].SetActive(true);
+            powerEffect[1].SetActive(true);
+        }
+    }
 
     void PowerupUIController(int index)
     {
