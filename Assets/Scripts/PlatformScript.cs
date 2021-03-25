@@ -22,7 +22,7 @@ public class PlatformScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (Input.GetMouseButtonDown(0)) //enable the sprite renderer, set shot false
         {
