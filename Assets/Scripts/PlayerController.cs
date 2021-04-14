@@ -108,9 +108,14 @@ public class PlayerController : MonoBehaviour
             powerEffect[0].SetActive(false);
             powerEffect[1].SetActive(false);
         }
+        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("mitzPower"))
+        {
+            powerEffect[0].SetActive(false);
+            powerEffect[1].SetActive(false);
+        }
 
         //DistancePoints
-        if(onPlatform)
+        if (onPlatform)
         {
             stablePosition = gameObject.transform.position;
         }
