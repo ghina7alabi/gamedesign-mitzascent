@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class SuperBounceScript : MonoBehaviour
 {
-    public Rigidbody2D playerRb;
+    public GameObject player;
+    public Transform teleportCircle;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +23,8 @@ public class SuperBounceScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            playerRb.AddForce(new Vector2(0, -800), ForceMode2D.Impulse);
+            player.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
+            player.transform.position = teleportCircle.position;
         }
     }
 }
