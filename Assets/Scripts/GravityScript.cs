@@ -8,11 +8,13 @@ public class GravityScript : MonoBehaviour
     Rigidbody2D rb;
     bool playerisin;
     Vector3 pullForce;
+    float pullPower;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = Player.GetComponent<Rigidbody2D>();
+        pullPower = 0;
     }
 
     // Update is called once per frame
@@ -21,7 +23,7 @@ public class GravityScript : MonoBehaviour
         if (playerisin)
         {
             pullForce = (gameObject.transform.position - Player.transform.position).normalized;
-            rb.AddForce(pullForce * 500);
+            rb.AddForce(pullForce * pullPower);
         }
     }
 
@@ -31,6 +33,7 @@ public class GravityScript : MonoBehaviour
         {
             playerisin = true;
             rb.gravityScale = 0;
+            pullPower = 500;
         }
     }
 
@@ -40,6 +43,7 @@ public class GravityScript : MonoBehaviour
         {
             playerisin = false;
             rb.gravityScale = 5;
+            pullPower = 0;
         }
     }
 }
