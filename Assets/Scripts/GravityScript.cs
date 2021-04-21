@@ -21,7 +21,7 @@ public class GravityScript : MonoBehaviour
         if (playerisin)
         {
             pullForce = (gameObject.transform.position - Player.transform.position).normalized;
-            rb.AddForce(pullForce * 50);
+            rb.AddForce(pullForce * 500);
         }
     }
 
