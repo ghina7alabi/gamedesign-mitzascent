@@ -10890,7 +10890,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 820235553}
   m_LocalRotation: {x: 0.0083774375, y: -0, z: -0, w: 0.99996495}
-  m_LocalPosition: {x: 21.26, y: 290.4, z: 2.6}
+  m_LocalPosition: {x: 13.81, y: 290.4, z: 2.6}
   m_LocalScale: {x: 1.6223177, y: 1.6300521, z: 3.053137}
   m_Children:
   - {fileID: 835209644}
@@ -11127,6 +11127,7 @@ GameObject:
   m_Component:
   - component: {fileID: 857964939}
   - component: {fileID: 857964938}
+  - component: {fileID: 857964940}
   m_Layer: 0
   m_Name: ConveyorBelt
   m_TagString: Untagged
@@ -11145,7 +11146,7 @@ PolygonCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -11183,16 +11184,34 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 857964937}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.8, y: 274, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.19999313, y: 0.8000488, z: 0}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children:
   - {fileID: 638532995}
   - {fileID: 865206540}
   - {fileID: 379332994}
-  m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_Father: {fileID: 2801718129190289706}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!252 &857964940
+SurfaceEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857964937}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Speed: -10
+  m_SpeedVariation: 0
+  m_ForceScale: 0.1
+  m_UseContactForce: 0
+  m_UseFriction: 1
+  m_UseBounce: 1
 --- !u!1 &859390548
 GameObject:
   m_ObjectHideFlags: 0
@@ -22254,7 +22273,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1814295884}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.076254, y: 279.4875, z: 0}
+  m_LocalPosition: {x: -51, y: 279.4875, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -32149,7 +32168,7 @@ Transform:
   m_LocalScale: {x: 32.926994, y: 32.926994, z: 8.231749}
   m_Children: []
   m_Father: {fileID: 2801718129190289706}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2457677688383461889
 GameObject:
@@ -32277,7 +32296,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2801718129089082828}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 21, y: 282.8, z: 0}
+  m_LocalPosition: {x: 0, y: 277.25, z: 0}
   m_LocalScale: {x: 8, y: 8, z: 6}
   m_Children:
   - {fileID: 2801718127731169183}
@@ -32451,6 +32470,7 @@ Transform:
   m_LocalScale: {x: 2.4999998, y: 2.4999998, z: 1}
   m_Children:
   - {fileID: 2801718129190495972}
+  - {fileID: 857964939}
   - {fileID: 2801718129221264250}
   - {fileID: 2455208738743469409}
   m_Father: {fileID: 2801718127731169183}
@@ -32714,7 +32734,7 @@ Transform:
   m_LocalScale: {x: 60, y: 60, z: 1}
   m_Children: []
   m_Father: {fileID: 2801718129190289706}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &2801718129221264251
 CircleCollider2D:
