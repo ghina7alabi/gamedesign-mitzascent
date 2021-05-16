@@ -1,0 +1,394 @@
+fileFormatVersion: 2
+guid: c34b43fdd95601b4fa59a62e9f629006
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7961106452194621144
+    second: mitzIdleSheet_0
+  - first:
+      213: 1429993836800685354
+    second: mitzIdleSheet_1
+  - first:
+      213: -8781011443953392743
+    second: mitzIdleSheet_2
+  - first:
+      213: 5096449291129523179
+    second: mitzIdleSheet_3
+  - first:
+      213: -7500684579504712297
+    second: mitzIdleSheet_4
+  - first:
+      213: 2610119185932290005
+    second: mitzIdleSheet_5
+  - first:
+      213: 3468868487074429144
+    second: mitzIdleSheet_6
+  - first:
+      213: 4442572541044188942
+    second: mitzIdleSheet_7
+  - first:
+      213: 4425543442038290516
+    second: mitzIdleSheet_8
+  - first:
+      213: -8643480655990094802
+    second: mitzIdleSheet_0
+  - first:
+      213: -2113545509890873269
+    second: mitzIdleSheet_1
+  - first:
+      213: 3661165192392553149
+    second: mitzIdleSheet_2
+  - first:
+      213: -4348275252624481705
+    second: mitzIdleSheet_3
+  - first:
+      213: 21357357106549580
+    second: mitzIdleSheet_4
+  - first:
+      213: -9116848754853327115
+    second: mitzIdleSheet_5
+  - first:
+      213: 3207082293849501728
+    second: mitzIdleSheet_9
+  - first:
+      213: -8791344473865385118
+    second: mitzIdleSheet_10
+  - first:
+      213: -2142561383003466654
+    second: mitzIdleSheet_11
+  - first:
+      213: 7468419788615560957
+    second: mitzIdleSheet_12
+  - first:
+      213: -2952110134423108143
+    second: mitzIdleSheet_13
+  - first:
+      213: -1873638831769448579
+    second: mitzIdleSheet_14
+  - first:
+      213: -8281774050564481646
+    second: mitzIdleSheet_15
+  - first:
+      213: -4431457831941342550
+    second: mitzIdleSheet_16
+  - first:
+      213: 4460436622642446091
+    second: mitzIdleSheet_17
+  - first:
+      213: -7367476037012139545
+    second: mitzIdleSheet_18
+  - first:
+      213: -3676430583250633407
+    second: mitzIdleSheet_19
+  - first:
+      213: -7640868936673852962
+    second: mitzIdleSheet_20
+  - first:
+      213: 6690609088297336371
+    second: mitzIdleSheet_21
+  - first:
+      213: 3989070487165598316
+    second: mitzIdleSheet_22
+  - first:
+      213: 3005701025901033897
+    second: mitzIdleSheet_23
+  - first:
+      213: -8231979517653902714
+    second: mitzIdleSheet_24
+  - first:
+      213: -282892899356940126
+    second: mitzIdleSheet_25
+  - first:
+      213: 3337561856422396244
+    second: mitzIdleSheet_26
+  - first:
+      213: 3045980012015373307
+    second: mitzIdleSheet_27
+  - first:
+      213: 3382173605313243517
+    second: mitzIdleSheet_28
+  - first:
+      213: -3243938050216256633
+    second: mitzIdleSheet_29
+  - first:
+      213: -8605330074287117450
+    second: mitzIdleSheet_30
+  - first:
+      213: -873669133983003442
+    second: mitzIdleSheet_31
+  - first:
+      213: -1256533526741070171
+    second: mitzIdleSheet_32
+  - first:
+      213: -5483298287216544664
+    second: mitzIdleSheet_33
+  - first:
+      213: 2734762008736411991
+    second: mitzIdleSheet_34
+  - first:
+      213: -8213150339058395207
+    second: mitzIdleSheet_35
+  - first:
+      213: -1599470984443365369
+    second: mitzIdleSheet_36
+  - first:
+      213: 1136674103554513927
+    second: mitzIdleSheet_37
+  - first:
+      213: -3894042248264844378
+    second: mitzIdleSheet_38
+  - first:
+      213: 4405429381849134705
+    second: mitzIdleSheet_39
+  - first:
+      213: 5422971115247207764
+    second: mitzIdleSheet_40
+  - first:
+      213: -6732906362819943441
+    second: mitzIdleSheet_41
+  - first:
+      213: -5171862376036668195
+    second: mitzIdleSheet_42
+  - first:
+      213: -4996348107135184813
+    second: mitzIdleSheet_43
+  - first:
+      213: -1253477945418446319
+    second: mitzIdleSheet_44
+  - first:
+      213: 631752356267558299
+    second: mitzIdleSheet_45
+  - first:
+      213: 5762658030262377918
+    second: mitzIdleSheet_46
+  - first:
+      213: -7350928988240995391
+    second: mitzIdleSheet_47
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: mitzIdleSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2400c473203c0880800000000000000
+      internalID: -8643480655990094802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mitzIdleSheet_1
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b48255a8e8d2ba2e0800000000000000
+      internalID: -2113545509890873269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mitzIdleSheet_2
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db2359448521fc230800000000000000
+      internalID: 3661165192392553149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mitzIdleSheet_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75222b522b2d7a3c0800000000000000
+      internalID: -4348275252624481705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mitzIdleSheet_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c435da33760eb4000800000000000000
+      internalID: 21357357106549580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mitzIdleSheet_5
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fe41005c527a7180800000000000000
+      internalID: -9116848754853327115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
