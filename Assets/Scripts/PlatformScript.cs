@@ -18,7 +18,7 @@ public class PlatformScript : MonoBehaviour
         rb = this.gameObject.GetComponent<Rigidbody2D>();
         OriginalPlatPos = this.gameObject.transform.position;
         shot = false;
-        originalSpeed = 10;
+        originalSpeed = 11;
     }
 
     // Update is called once per frame
@@ -46,7 +46,7 @@ public class PlatformScript : MonoBehaviour
 
             if (PlayerController.platformSpeedUp)
             {
-                rb.velocity = TurnBackSpeed * 1.3f;
+                rb.velocity = TurnBackSpeed * 1.5f;
             }
             else
             {
