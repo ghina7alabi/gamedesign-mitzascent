@@ -5886,6 +5886,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 120120, guid: 81bc1efb6a09c7a468f85500c18ef233, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 163082, guid: 81bc1efb6a09c7a468f85500c18ef233, type: 3}
       propertyPath: m_Name
       value: 2DNarrationSystem
@@ -31077,7 +31081,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 896176013}
   m_LocalRotation: {x: 0.0083774375, y: 0, z: 0, w: 0.99996495}
-  m_LocalPosition: {x: 16, y: 371.9, z: -0.1}
+  m_LocalPosition: {x: 1.4, y: 421.5, z: -0.1}
   m_LocalScale: {x: 0.8984433, y: 0.9027266, z: 1.6908344}
   m_Children:
   - {fileID: 1058347191}
