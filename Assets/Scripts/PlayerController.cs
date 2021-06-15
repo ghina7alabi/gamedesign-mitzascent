@@ -84,11 +84,13 @@ public class PlayerController : MonoBehaviour
         {
             playerRB.AddForce(transform.up * thrust, ForceMode2D.Impulse);
             animator.SetBool("isJumping", true);
+            animator.SetBool("inAir", true);
         }
         if (Input.GetKeyDown(KeyCode.W) && !onPlatform && canDoubleJump) //&& !canMove 
         {
             playerRB.AddForce(transform.up * thrust, ForceMode2D.Impulse);
             animator.SetBool("isJumping", true);
+            animator.SetBool("inAir", true);
             powerupUI[3].GetComponent<RectTransform>().sizeDelta = new Vector2(55, 55);
             canDoubleJump = false;
         }
@@ -99,6 +101,7 @@ public class PlayerController : MonoBehaviour
             canMove = false;
             animator.SetBool("isPower", true);
             StartCoroutine(WaitForEffect(0.6f));
+            Debug.Log("down");
         }
 
         if (Input.GetMouseButtonUp(0))
@@ -108,7 +111,9 @@ public class PlayerController : MonoBehaviour
             powerEffect[0].SetActive(false);
             powerEffect[1].SetActive(false);
         }
-        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("mitzPower"))
+        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("mitzPowerStand"))
+            //|| !animator.GetCurrentAnimatorStateInfo(0).IsName("powerToWalk")
+            //|| !animator.GetCurrentAnimatorStateInfo(0).IsName("PowerJump") )
         {
             powerEffect[0].SetActive(false);
             powerEffect[1].SetActive(false);
@@ -121,7 +126,8 @@ public class PlayerController : MonoBehaviour
         }
         if (!onPlatform && playerRB.velocity.y != 0 && !Input.GetMouseButton(0))
         {
-            animator.SetBool("isJumping", true);
+            //animator.SetBool("isJumping", true);
+            animator.SetBool("inAir", true);
         }
 
         //powerups
@@ -272,6 +278,7 @@ public class PlayerController : MonoBehaviour
     public void OnLanding()
     {
         animator.SetBool("isJumping", false);
+        animator.SetBool("inAir", false);
     }
     private void Flip()
     {
@@ -287,7 +294,9 @@ public class PlayerController : MonoBehaviour
     IEnumerator WaitForEffect(float seconds)
     {
         yield return new WaitForSeconds(seconds);
-        if(animator.GetCurrentAnimatorStateInfo(0).IsName("mitzPower"))
+        if(animator.GetCurrentAnimatorStateInfo(0).IsName("mitzPowerStand")
+            || animator.GetCurrentAnimatorStateInfo(0).IsName("powerToWalk")
+            || animator.GetCurrentAnimatorStateInfo(0).IsName("PowerJump") )
         {
             powerEffect[0].SetActive(true);
             powerEffect[1].SetActive(true);
