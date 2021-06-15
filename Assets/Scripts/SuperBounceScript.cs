@@ -23,7 +23,7 @@ public class SuperBounceScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            player.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
+            //player.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
             player.transform.position = teleportCircle.position;
         }
     }
