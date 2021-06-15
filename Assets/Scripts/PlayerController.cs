@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     //player variables
     Rigidbody2D playerRB;
     public float walkSpeed = 7f;
-    public float thrust = 220f;
+    public float thrust = 40f;
     public static float sticktimer;
     public Animator animator;
     float horizontalMove = 0f;
