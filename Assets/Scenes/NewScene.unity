@@ -7983,7 +7983,6 @@ GameObject:
   - component: {fileID: 128335137}
   - component: {fileID: 128335136}
   - component: {fileID: 128335135}
-  - component: {fileID: 128335134}
   - component: {fileID: 128335138}
   - component: {fileID: 128335139}
   m_Layer: 0
@@ -7993,19 +7992,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &128335134
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 128335133}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d73c3ddf2422364e9148a191dbbeded, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  character: {fileID: 896176013}
 --- !u!81 &128335135
 AudioListener:
   m_ObjectHideFlags: 0
@@ -8023,7 +8009,7 @@ Camera:
   m_GameObject: {fileID: 128335133}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 3
   m_BackGroundColor: {r: 0.33775365, g: 0.57534933, b: 0.6226415, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -8045,7 +8031,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 12087
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -8213,7 +8199,7 @@ GameObject:
   m_Component:
   - component: {fileID: 128566927}
   - component: {fileID: 128566928}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: grass (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11009,7 +10995,7 @@ GameObject:
   m_Component:
   - component: {fileID: 177792215}
   - component: {fileID: 177792214}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: wall (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12643,7 +12629,7 @@ GameObject:
   m_Component:
   - component: {fileID: 196968090}
   - component: {fileID: 196968091}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: musroomRockBlur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20524,7 +20510,7 @@ GameObject:
   m_Component:
   - component: {fileID: 264645313}
   - component: {fileID: 264645314}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: newscene-rock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27230,7 +27216,7 @@ GameObject:
   m_Component:
   - component: {fileID: 391462885}
   - component: {fileID: 391462886}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: third
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31811,7 +31797,7 @@ GameObject:
   m_Component:
   - component: {fileID: 491708876}
   - component: {fileID: 491708877}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: wines 1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43605,7 +43591,7 @@ GameObject:
   m_Component:
   - component: {fileID: 709466738}
   - component: {fileID: 709466739}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: grass (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48218,7 +48204,7 @@ GameObject:
   m_Component:
   - component: {fileID: 789663772}
   - component: {fileID: 789663773}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: wines 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54949,7 +54935,7 @@ GameObject:
   m_Component:
   - component: {fileID: 929988931}
   - component: {fileID: 929988932}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: grass (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67925,11 +67911,11 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 13
-  m_Depth: 0
+  orthographic size: 14
+  m_Depth: -2
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4096
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -84276,7 +84262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1444393840}
   - component: {fileID: 1444393841}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: newscene-rock (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94522,7 +94508,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1628157260}
   - component: {fileID: 1628157261}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: grass (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98917,7 +98903,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1725431448}
   - component: {fileID: 1725431449}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: grass (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101197,7 +101183,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1761946313}
   - component: {fileID: 1761946314}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: grass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106805,7 +106791,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1872474350}
   - component: {fileID: 1872474351}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: grass (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117648,7 +117634,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2089655733}
   - component: {fileID: 2089655734}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: newscene-rock (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
