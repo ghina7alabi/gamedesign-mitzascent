@@ -67,8 +67,8 @@ public class PlatformScript : MonoBehaviour
             rb.velocity = new Vector3(0, 0, 0);
             this.gameObject.transform.position = OriginalPlatPos;
             PlayerController.platformSpeedUp = false;
-            CameraSource.clip = PlatformSound;
-            CameraSource.Play();
+            //CameraSource.clip = PlatformSound;
+            //CameraSource.Play();
         }
     }
 

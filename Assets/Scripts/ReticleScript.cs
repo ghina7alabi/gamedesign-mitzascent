@@ -8,6 +8,9 @@ public class ReticleScript : MonoBehaviour
     Vector3 OriginalPlatPos, WantedPlatPos, OriginalMousePos, CurrentMousePos, MouseDifference, PlatDifference, CurrentPlatPos, TurnBackSpeed;
     Rigidbody2D rb;
 
+    public AudioSource CameraSource;
+    public AudioClip PlatformSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +47,8 @@ public class ReticleScript : MonoBehaviour
         {
             rb.velocity = new Vector3(0, 0, 0); //stop velocity
             gameObject.transform.position = OriginalPlatPos;
+            CameraSource.clip = PlatformSound;
+            CameraSource.Play();
         }
     }
 }
