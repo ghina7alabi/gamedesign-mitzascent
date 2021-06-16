@@ -74,6 +74,10 @@ public class NPCController : MonoBehaviour
         cutscene2.SetActive(true);
         yield return new WaitForSeconds(5);
         cutscene2.SetActive(false);
+
+        PlatformScript.gotMitz = true;
+        PlayerController.gotMitz = true;
+        ReticleScript.gotMitz = true;
     }
 
 }

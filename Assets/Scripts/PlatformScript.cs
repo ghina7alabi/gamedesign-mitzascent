@@ -9,6 +9,7 @@ public class PlatformScript : MonoBehaviour
     Rigidbody2D rb; //rb of the tiny circle
     Vector3 OriginalPlatPos, WantedPlatPos, OriginalMousePos, CurrentMousePos, MouseDifference, PlatDifference, CurrentPlatPos, TurnBackSpeed;
     bool shot;
+    static public bool gotMitz;
 
     public float originalSpeed;
 
@@ -23,25 +24,26 @@ public class PlatformScript : MonoBehaviour
         OriginalPlatPos = this.gameObject.transform.position;
         shot = false;
         originalSpeed = 11;
+        gotMitz = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) //enable the sprite renderer, set shot false
+        if (gotMitz && Input.GetMouseButtonDown(0)) //enable the sprite renderer, set shot false
         {
             shot = false;
             radius.GetComponent<SpriteRenderer>().enabled = true;
         }
        
-        if (Input.GetMouseButton(0)) //follow reticle
+        if (gotMitz && Input.GetMouseButton(0)) //follow reticle
         {
             CurrentPlatPos = this.gameObject.transform.position;
             WantedPlatPos = OriginalPlatPos + reticle.transform.position;
 
             rb.velocity = (WantedPlatPos - CurrentPlatPos) * 20;
         }
-        if (Input.GetMouseButtonUp(0)) //get shot
+        if (gotMitz && Input.GetMouseButtonUp(0)) //get shot
         {
             shot = true;
             radius.GetComponent<SpriteRenderer>().enabled = false; //enable sprite renderer

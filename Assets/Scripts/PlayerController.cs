@@ -19,8 +19,9 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     float horizontalMove = 0f;
     public GameObject[] powerEffect;
-    
 
+    static public bool gotMitz;
+    
     bool onPlatform, mouseClicked, canMove;
 
     static bool canRewind, canStop, canSpeedUp, canDoubleJump;
@@ -72,6 +73,8 @@ public class PlayerController : MonoBehaviour
         canSpeedUp = false;
         platformSpeedUp = false;
 
+        gotMitz = false;
+
         //Application.targetFrameRate = 60;
     }
 
@@ -102,7 +105,7 @@ public class PlayerController : MonoBehaviour
             canDoubleJump = false;
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (gotMitz && Input.GetMouseButtonDown(0))
         {
             mouseClicked = true;
             canMove = false;
@@ -111,7 +114,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("down");
         }
 
-        if (Input.GetMouseButtonUp(0))
+        if (gotMitz && Input.GetMouseButtonUp(0))
         {
             mouseClicked = false;
             animator.SetBool("isPower", false);
