@@ -187,7 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 2094085793}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &4124371
 SpriteRenderer:
@@ -531,7 +531,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &10722038
 SpriteRenderer:
@@ -1122,7 +1122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &16588853
 SpriteRenderer:
@@ -2314,7 +2314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &34141272
 SpriteRenderer:
@@ -4341,7 +4341,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &62886743
 SpriteRenderer:
@@ -4458,7 +4458,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &64399292
 SpriteRenderer:
@@ -6655,7 +6655,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 133771439}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &96058343
 SpriteRenderer:
@@ -6881,7 +6881,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 133771439}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &101957752
 SpriteRenderer:
@@ -7555,7 +7555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &121688327
 SpriteRenderer:
@@ -8065,7 +8065,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 128335133}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -58.324516, y: -34.75139, z: -12.6}
+  m_LocalPosition: {x: -58.324516, y: -34.751404, z: 0.10000038}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8494,7 +8494,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 0}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &133771442
 SpriteRenderer:
@@ -9034,7 +9034,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &143185062
 SpriteRenderer:
@@ -9576,7 +9576,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &148528653
 SpriteRenderer:
@@ -13082,7 +13082,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 0}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &203995418
 SpriteRenderer:
@@ -14849,7 +14849,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &240997453
 SpriteRenderer:
@@ -23315,7 +23315,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &328909764
 SpriteRenderer:
@@ -24396,7 +24396,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 203995415}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &339890917
 SpriteRenderer:
@@ -24622,7 +24622,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &343297621
 SpriteRenderer:
@@ -27744,7 +27744,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 3
 --- !u!212 &409875861
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -30286,7 +30286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &475089359
 SpriteRenderer:
@@ -31945,7 +31945,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &496276167
 SpriteRenderer:
@@ -33630,7 +33630,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &521448834
 SpriteRenderer:
@@ -34149,7 +34149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &533896867
 SpriteRenderer:
@@ -35223,7 +35223,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 2094085793}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &555448286
 SpriteRenderer:
@@ -36832,7 +36832,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &585344955
 SpriteRenderer:
@@ -37776,7 +37776,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &598811586
 SpriteRenderer:
@@ -39242,7 +39242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &635513919
 SpriteRenderer:
@@ -41243,7 +41243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &670345557
 SpriteRenderer:
@@ -44914,7 +44914,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &721471281
 SpriteRenderer:
@@ -46948,7 +46948,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 760375411}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 53.54445, y: 220.8, z: -12.6}
+  m_LocalPosition: {x: 74.54445, y: 982.1, z: 0.10000038}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 579384020}
@@ -47610,7 +47610,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &773902348
 SpriteRenderer:
@@ -48062,7 +48062,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &783079577
 SpriteRenderer:
@@ -50075,7 +50075,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &833665087
 SpriteRenderer:
@@ -51446,7 +51446,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &855075280
 SpriteRenderer:
@@ -51705,7 +51705,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &859032775
 SpriteRenderer:
@@ -53634,7 +53634,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 896176013}
   m_LocalRotation: {x: 0.0083774375, y: 0, z: 0, w: 0.99996495}
-  m_LocalPosition: {x: 9.1, y: 220.8, z: -2.6}
+  m_LocalPosition: {x: 30.1, y: 982.1, z: 10.1}
   m_LocalScale: {x: 0.8984433, y: 0.9027266, z: 1.6908344}
   m_Children:
   - {fileID: 1058347191}
@@ -54512,7 +54512,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 133771439}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &915689436
 SpriteRenderer:
@@ -61542,7 +61542,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &1065916829
 SpriteRenderer:
@@ -62637,7 +62637,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 203995415}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &1077618760
 SpriteRenderer:
@@ -68128,7 +68128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &1197083227
 SpriteRenderer:
@@ -70047,7 +70047,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &1221723285
 SpriteRenderer:
@@ -71254,7 +71254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 203995415}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &1236704976
 SpriteRenderer:
@@ -73829,7 +73829,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &1291602618
 SpriteRenderer:
@@ -77752,7 +77752,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &1340382753
 SpriteRenderer:
@@ -77869,7 +77869,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &1341640507
 SpriteRenderer:
@@ -78839,7 +78839,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &1357300324
 SpriteRenderer:
@@ -81519,7 +81519,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &1404167148
 SpriteRenderer:
@@ -81636,7 +81636,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &1404232518
 SpriteRenderer:
@@ -84456,7 +84456,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &1450081143
 SpriteRenderer:
@@ -84703,7 +84703,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &1453028942
 SpriteRenderer:
@@ -85526,7 +85526,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &1472036305
 SpriteRenderer:
@@ -86232,7 +86232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &1483756809
 SpriteRenderer:
@@ -87188,7 +87188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 203995415}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &1509714978
 SpriteRenderer:
@@ -88358,7 +88358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 203995415}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &1533126336
 SpriteRenderer:
@@ -88568,7 +88568,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 3
 --- !u!212 &1536620641
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -88803,7 +88803,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &1543331729
 SpriteRenderer:
@@ -89676,7 +89676,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &1553591220
 SpriteRenderer:
@@ -90735,7 +90735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 133771439}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &1567298222
 SpriteRenderer:
@@ -92871,7 +92871,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &1604115953
 SpriteRenderer:
@@ -93410,7 +93410,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &1611309666
 SpriteRenderer:
@@ -98065,7 +98065,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1712613411}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.1, y: 220.8, z: -12.6}
+  m_LocalPosition: {x: 30.1, y: 982.1, z: 0.10000038}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1013345170}
@@ -98153,7 +98153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &1716247168
 SpriteRenderer:
@@ -100639,7 +100639,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &1752058968
 SpriteRenderer:
@@ -104345,7 +104345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &1822317601
 SpriteRenderer:
@@ -106078,7 +106078,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &1856826875
 SpriteRenderer:
@@ -107381,7 +107381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &1879604527
 SpriteRenderer:
@@ -107607,7 +107607,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &1879957325
 SpriteRenderer:
@@ -113489,7 +113489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 2094085793}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &1993231664
 SpriteRenderer:
@@ -115167,7 +115167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &2030728609
 SpriteRenderer:
@@ -117946,7 +117946,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 203995415}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &2094085796
 SpriteRenderer:
@@ -118172,7 +118172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 896176013}
   teleportCircle: {fileID: 1533126333}
-  CameraSource: {fileID: 0}
+  CameraSource: {fileID: 128335139}
   TeleportSound: {fileID: 8300000, guid: af64652a1fcb81f408a3fea3a256c60a, type: 3}
 --- !u!212 &2097843094
 SpriteRenderer:
@@ -120875,7 +120875,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 3
 --- !u!1 &3262065872313325392
 GameObject:
   m_ObjectHideFlags: 0
