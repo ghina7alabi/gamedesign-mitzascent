@@ -55959,7 +55959,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: repetitiveSpeech.expanded
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: initialSpeech.phrases.Array.size
@@ -55979,27 +55979,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: notEnoughSpeech.lastCalculatedHeight
-      value: 196
-      objectReference: {fileID: 0}
-    - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
-      propertyPath: repetitiveSpeech.lastCalculatedHeight
       value: 76
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
+      propertyPath: repetitiveSpeech.lastCalculatedHeight
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: initialSpeech.phrases.Array.data[0].text
-      value: HA! What are you doing here, fella?
+      value: Hello there! It's impressive you made it here.
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: initialSpeech.phrases.Array.data[1].text
-      value: The magnetic field is pretty strong around here.
+      value: There are mysterious machinery above. I can use the metal to forge tools.
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: initialSpeech.phrases.Array.data[2].text
-      value: I may have something that can help.
+      value: I can't go much farther from here, though.
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: powerupSpeech.phrases.Array.data[0].text
-      value: Good luck, little fella.
+      value: Here's a little something for you.
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: notEnoughSpeech.phrases.Array.data[0].text
@@ -56007,7 +56007,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: repetitiveSpeech.phrases.Array.data[0].text
-      value: Have you felt the current yet?
+      value: You've made it far. Good luck with the area above!
+      objectReference: {fileID: 0}
+    - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
+      propertyPath: initialSpeech.phrases.Array.data[0].drawAudio
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
+      propertyPath: initialSpeech.phrases.Array.data[1].drawAudio
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
+      propertyPath: initialSpeech.phrases.Array.data[2].drawAudio
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
+      propertyPath: initialSpeech.phrases.Array.data[0].lastCalculatedHeight
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
+      propertyPath: initialSpeech.phrases.Array.data[1].lastCalculatedHeight
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
+      propertyPath: initialSpeech.phrases.Array.data[2].lastCalculatedHeight
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102735, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: m_FlipX
