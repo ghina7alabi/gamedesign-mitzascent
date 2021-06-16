@@ -21,9 +21,17 @@ public class NPCController : MonoBehaviour
 
     public GameObject cutscene1, cutscene2;
 
+
+
     // Update is called once per frame
     void Update()
     {
+
+        //testing
+        PlatformScript.gotMitz = true;
+        PlayerController.gotMitz = true;
+        ReticleScript.gotMitz = true;
+
         if (nearPlayer & Input.GetKeyDown(KeyCode.Return))
         {
             if (!playedInitialSpeech)

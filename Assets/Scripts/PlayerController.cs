@@ -55,6 +55,7 @@ public class PlayerController : MonoBehaviour
     //cinemachine
     public CinemachineVirtualCamera villageCam;
     public CinemachineVirtualCamera towerCam;
+    public CinemachineVirtualCamera caveCam;
 
 
     // Start is called before the first frame update
@@ -286,13 +287,21 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.name == "VillageBound")
         {
-            villageCam.Priority = 1;
-            towerCam.Priority = 0;
+            villageCam.Priority = 2;
+            towerCam.Priority = 1;
+            caveCam.Priority = 0;
         }
         if (collision.gameObject.name == "TowerBound")
         {
+            villageCam.Priority = 1;
+            towerCam.Priority = 2;
+            caveCam.Priority = 0;
+        }
+        if (collision.gameObject.name == "CaveBound")
+        {
             villageCam.Priority = 0;
             towerCam.Priority = 1;
+            caveCam.Priority = 2;
         }
     }
 
