@@ -5,6 +5,7 @@ using Narrate;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using Cinemachine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -48,7 +49,11 @@ public class PlayerController : MonoBehaviour
     [System.Serializable]
     public class BoolEvent : UnityEvent<bool> { }
 
-        
+    //cinemachine
+    public CinemachineVirtualCamera villageCam;
+    public CinemachineVirtualCamera towerCam;
+
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -257,6 +262,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+
+    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
 
@@ -264,6 +275,17 @@ public class PlayerController : MonoBehaviour
         {
             nearNPC = true;
             npcInRange = collision.gameObject;
+        }
+
+        if (collision.gameObject.name == "VillageBound")
+        {
+            villageCam.Priority = 1;
+            towerCam.Priority = 0;
+        }
+        if (collision.gameObject.name == "TowerBound")
+        {
+            villageCam.Priority = 0;
+            towerCam.Priority = 1;
         }
     }
 
