@@ -439,7 +439,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 8e5546c734cc93748b453bb8fa8af586, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.8301887, g: 0.8301887, b: 0.8301887, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -464,6 +464,8 @@ MonoBehaviour:
   radius: {fileID: 7389612561110649522}
   reticle: {fileID: 0}
   originalSpeed: 0
+  CameraSource: {fileID: 0}
+  PlatformSound: {fileID: 0}
 --- !u!50 &7389612560981174491
 Rigidbody2D:
   serializedVersion: 4
