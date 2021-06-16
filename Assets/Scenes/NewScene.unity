@@ -972,6 +972,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
+      propertyPath: notEnoughSpeech.expanded
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: repetitiveSpeech.expanded
       value: 1
       objectReference: {fileID: 0}
@@ -981,31 +985,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: initialSpeech.lastCalculatedHeight
-      value: 396
+      value: 76
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: powerupSpeech.lastCalculatedHeight
       value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
+      propertyPath: notEnoughSpeech.lastCalculatedHeight
+      value: 76
+      objectReference: {fileID: 0}
+    - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: repetitiveSpeech.lastCalculatedHeight
-      value: 196
+      value: 76
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: initialSpeech.phrases.Array.data[0].text
-      value: Happy birthday Mitz! So, are you ready for climbing ritual?
+      value: Happy birthday, Mitz! So, are you ready for the climbing ritual?
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: initialSpeech.phrases.Array.data[1].text
-      value: Fufufufu, I know you are ready, I am just teasing you.
+      value: Huhuhuhu, I know you are ready, I am just teasing you.
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: initialSpeech.phrases.Array.data[2].text
-      value: I believe in you! Now go, you don't want to wait the priests!
+      value: I believe in you! Now go, you don't want to keep the priests waiting!
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: powerupSpeech.phrases.Array.data[0].text
       value: Let's see where this takes you.
+      objectReference: {fileID: 0}
+    - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
+      propertyPath: notEnoughSpeech.phrases.Array.data[0].text
+      value: Sorry, can't help you. (Need more points.)
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: repetitiveSpeech.phrases.Array.data[0].text
@@ -4040,7 +4052,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &58272367
 Transform:
   m_ObjectHideFlags: 0
@@ -23744,15 +23756,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: initialSpeech.expanded
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: powerupSpeech.expanded
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
-      propertyPath: repetitiveSpeech.expanded
+      propertyPath: notEnoughSpeech.expanded
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
+      propertyPath: repetitiveSpeech.expanded
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: initialSpeech.phrases.Array.size
@@ -23760,19 +23776,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: initialSpeech.lastCalculatedHeight
-      value: 76
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: powerupSpeech.lastCalculatedHeight
       value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
-      propertyPath: repetitiveSpeech.lastCalculatedHeight
+      propertyPath: notEnoughSpeech.lastCalculatedHeight
       value: 196
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
+      propertyPath: repetitiveSpeech.lastCalculatedHeight
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: initialSpeech.phrases.Array.data[0].text
-      value: Oh, Mitz happy birthday! How long it has been since anyone tried to
+      value: Oh, Mitz happy birthday! It has been long since anyone tried to face
         this ancient challenge!
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
@@ -23781,13 +23801,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: initialSpeech.phrases.Array.data[2].text
-      value: Take this gloves Mitz! I know you waited for them since you are little
+      value: Take these gloves Mitz! I know you wanted them since you were a little
         kid.
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: initialSpeech.phrases.Array.data[3].text
-      value: 'According to tomes, you need to use the power of sacred orbs in your
-        gloves with "LEFT MOUSE CLICK" '
+      value: According to the ancient tomes, you need to use the power of sacred
+        orbs in your gloves with "LEFT MOUSE CLICK".
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: initialSpeech.phrases.Array.data[4].text
@@ -23796,6 +23816,10 @@ PrefabInstance:
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: powerupSpeech.phrases.Array.data[0].text
       value: I hope this helps.
+      objectReference: {fileID: 0}
+    - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
+      propertyPath: notEnoughSpeech.phrases.Array.data[0].text
+      value: Sorry, cant help you. (Need more points.)
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: repetitiveSpeech.phrases.Array.data[0].text
@@ -37700,7 +37724,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: powerupSpeech.expanded
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
+      propertyPath: notEnoughSpeech.expanded
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: repetitiveSpeech.expanded
@@ -37712,15 +37740,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: initialSpeech.lastCalculatedHeight
-      value: 596
+      value: 76
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: powerupSpeech.lastCalculatedHeight
-      value: 16
+      value: 76
+      objectReference: {fileID: 0}
+    - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
+      propertyPath: notEnoughSpeech.lastCalculatedHeight
+      value: 196
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: repetitiveSpeech.lastCalculatedHeight
-      value: 196
+      value: 76
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: initialSpeech.phrases.Array.data[0].text
@@ -37728,27 +37760,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: initialSpeech.phrases.Array.data[1].text
-      value: I tried this challenge when I was your age as well.
+      value: I also tried this challenge when I was your age.
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: initialSpeech.phrases.Array.data[2].text
-      value: As you can see I didn't succeed
+      value: As you can see, I didn't succeed.
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: initialSpeech.phrases.Array.data[3].text
-      value: Actually noone did in 200 years. But you can always try hehuhuehu...
+      value: Actually, no one did in 200 years. But you can always try. Heh heh...
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: initialSpeech.phrases.Array.data[4].text
-      value: Ehmm... I mean good luck.
+      value: Ehmm... I mean, good luck.
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: powerupSpeech.phrases.Array.data[0].text
       value: I hope this helps.
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
+      propertyPath: notEnoughSpeech.phrases.Array.data[0].text
+      value: Sorry, can't help you. (Need more points.)
+      objectReference: {fileID: 0}
+    - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: repetitiveSpeech.phrases.Array.data[0].text
-      value: If you fail, you can always be a priest, hehuhuehu...
+      value: If you fail, you can always be a priest, heh heh heh...
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: initialSpeech.phrases.Array.data[3].drawAudio
@@ -55383,15 +55419,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: initialSpeech.expanded
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: powerupSpeech.expanded
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
+      propertyPath: notEnoughSpeech.expanded
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: repetitiveSpeech.expanded
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: initialSpeech.phrases.Array.size
@@ -55399,15 +55439,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: initialSpeech.lastCalculatedHeight
-      value: 16
+      value: 76
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: powerupSpeech.lastCalculatedHeight
-      value: 16
+      value: 76
+      objectReference: {fileID: 0}
+    - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
+      propertyPath: notEnoughSpeech.lastCalculatedHeight
+      value: 196
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: repetitiveSpeech.lastCalculatedHeight
-      value: 16
+      value: 76
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: initialSpeech.phrases.Array.data[0].text
@@ -55424,6 +55468,10 @@ PrefabInstance:
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: powerupSpeech.phrases.Array.data[0].text
       value: Good luck, little fella.
+      objectReference: {fileID: 0}
+    - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
+      propertyPath: notEnoughSpeech.phrases.Array.data[0].text
+      value: Sorry, can't help you. (Need more points.)
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: repetitiveSpeech.phrases.Array.data[0].text
