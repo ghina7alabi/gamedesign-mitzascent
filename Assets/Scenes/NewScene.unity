@@ -9339,6 +9339,7 @@ MonoBehaviour:
   MouseCamera: {fileID: 573657740}
   CameraSource: {fileID: 128335139}
   PlatformSound: {fileID: 8300000, guid: 2ee5d1acf142b334888daad802594d39, type: 3}
+  ForceSound: {fileID: 8300000, guid: 17530d23757d7ef49b7e6c4c367d0ccb, type: 3}
 --- !u!58 &146946140
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -9,7 +9,7 @@ public class ReticleScript : MonoBehaviour
     Rigidbody2D rb;
 
     public AudioSource CameraSource;
-    public AudioClip PlatformSound;
+    public AudioClip PlatformSound, ForceSound;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +24,10 @@ public class ReticleScript : MonoBehaviour
         if (Input.GetMouseButtonDown(0)) //take mouse position then enable the sprite renderer
         {
             OriginalMousePos = MouseCamera.ScreenToWorldPoint(Input.mousePosition); //Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            CameraSource.clip = ForceSound;
+            CameraSource.volume = 0.4f;
+            CameraSource.loop = true;
+            CameraSource.Play();
         }
 
         if (Input.GetMouseButton(0)) // 
@@ -48,6 +52,8 @@ public class ReticleScript : MonoBehaviour
             rb.velocity = new Vector3(0, 0, 0); //stop velocity
             gameObject.transform.position = OriginalPlatPos;
             CameraSource.clip = PlatformSound;
+            CameraSource.volume = 1f;
+            CameraSource.loop = false;
             CameraSource.Play();
         }
     }
