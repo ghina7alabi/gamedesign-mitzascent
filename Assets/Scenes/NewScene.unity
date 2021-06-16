@@ -23870,6 +23870,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
+      propertyPath: initialSpeech.mainAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 8a7effb25b3095540826a2667e550b4b, type: 3}
+    - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: notEnoughSpeech.expanded
       value: 1
       objectReference: {fileID: 0}
@@ -23883,7 +23887,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: initialSpeech.lastCalculatedHeight
-      value: 596
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
+      propertyPath: initialSpeech.singleAudio_MultiSub
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: powerupSpeech.lastCalculatedHeight
@@ -23891,7 +23899,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: notEnoughSpeech.lastCalculatedHeight
-      value: 76
+      value: 196
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: repetitiveSpeech.lastCalculatedHeight
@@ -38036,6 +38044,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
+      propertyPath: initialSpeech.mainAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 8a7effb25b3095540826a2667e550b4b, type: 3}
+    - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: notEnoughSpeech.expanded
       value: 1
       objectReference: {fileID: 0}
@@ -38049,7 +38061,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: initialSpeech.lastCalculatedHeight
-      value: 596
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
+      propertyPath: initialSpeech.singleAudio_MultiSub
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: powerupSpeech.lastCalculatedHeight
@@ -38057,7 +38073,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: notEnoughSpeech.lastCalculatedHeight
-      value: 76
+      value: 196
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: repetitiveSpeech.lastCalculatedHeight
@@ -55934,6 +55950,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
+      propertyPath: initialSpeech.mainAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 3bbf4f46c4e20be4e896a2260d9744c2, type: 3}
+    - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: notEnoughSpeech.expanded
       value: 1
       objectReference: {fileID: 0}
@@ -55947,7 +55967,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: initialSpeech.lastCalculatedHeight
-      value: 396
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
+      propertyPath: initialSpeech.singleAudio_MultiSub
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: powerupSpeech.lastCalculatedHeight
@@ -55955,7 +55979,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: notEnoughSpeech.lastCalculatedHeight
-      value: 76
+      value: 196
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: repetitiveSpeech.lastCalculatedHeight
@@ -93655,6 +93679,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
+      propertyPath: initialSpeech.mainAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 3bbf4f46c4e20be4e896a2260d9744c2, type: 3}
+    - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: notEnoughSpeech.expanded
       value: 1
       objectReference: {fileID: 0}
@@ -93668,7 +93696,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: initialSpeech.lastCalculatedHeight
-      value: 396
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
+      propertyPath: initialSpeech.singleAudio_MultiSub
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: powerupSpeech.lastCalculatedHeight
@@ -93676,7 +93708,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: notEnoughSpeech.lastCalculatedHeight
-      value: 76
+      value: 196
       objectReference: {fileID: 0}
     - target: {fileID: 16220555409102731, guid: 38f2e9d5d07d19f4b963c87a020e3c95, type: 3}
       propertyPath: repetitiveSpeech.lastCalculatedHeight
