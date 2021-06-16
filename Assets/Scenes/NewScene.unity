@@ -3107,6 +3107,8 @@ MonoBehaviour:
   radius: {fileID: 1232700241}
   reticle: {fileID: 146946137}
   originalSpeed: 0
+  CameraSource: {fileID: 0}
+  PlatformSound: {fileID: 0}
 --- !u!212 &43406436
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7965,6 +7967,7 @@ GameObject:
   - component: {fileID: 128335135}
   - component: {fileID: 128335134}
   - component: {fileID: 128335138}
+  - component: {fileID: 128335139}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -8044,7 +8047,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 128335133}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -199.41106, y: -35.3, z: -17.1}
+  m_LocalPosition: {x: 0.8110466, y: -35.299988, z: -12.666405}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8084,6 +8087,102 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!82 &128335139
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128335133}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &128566926
 GameObject:
   m_ObjectHideFlags: 0
@@ -11042,6 +11141,8 @@ MonoBehaviour:
   radius: {fileID: 303096144}
   reticle: {fileID: 146946137}
   originalSpeed: 0
+  CameraSource: {fileID: 0}
+  PlatformSound: {fileID: 0}
 --- !u!212 &178239376
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -21031,6 +21132,8 @@ MonoBehaviour:
   radius: {fileID: 1031026240}
   reticle: {fileID: 146946137}
   originalSpeed: 0
+  CameraSource: {fileID: 0}
+  PlatformSound: {fileID: 0}
 --- !u!212 &282538229
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -25403,6 +25506,8 @@ MonoBehaviour:
   radius: {fileID: 1898200062}
   reticle: {fileID: 146946137}
   originalSpeed: 0
+  CameraSource: {fileID: 0}
+  PlatformSound: {fileID: 0}
 --- !u!212 &363241471
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -28944,6 +29049,8 @@ MonoBehaviour:
   radius: {fileID: 920889969}
   reticle: {fileID: 146946137}
   originalSpeed: 0
+  CameraSource: {fileID: 0}
+  PlatformSound: {fileID: 0}
 --- !u!212 &445322961
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -37169,6 +37276,8 @@ MonoBehaviour:
   radius: {fileID: 792143250}
   reticle: {fileID: 146946137}
   originalSpeed: 0
+  CameraSource: {fileID: 0}
+  PlatformSound: {fileID: 0}
 --- !u!212 &592901724
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -40103,7 +40212,7 @@ MonoBehaviour:
     m_SingletonActionBindings:
     - m_Name: 
       m_Id: 15b19472-1804-458d-b160-5253b63d3fc2
-      m_Path: <Keyboard>/backslash
+      m_Path: <Keyboard>/p
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -46847,7 +46956,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 760375411}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -202.8, y: -40.8, z: -17.1}
+  m_LocalPosition: {x: 2, y: 221.21622, z: -12.666405}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 579384020}
@@ -50466,6 +50575,8 @@ MonoBehaviour:
   radius: {fileID: 1892330186}
   reticle: {fileID: 146946137}
   originalSpeed: 0
+  CameraSource: {fileID: 0}
+  PlatformSound: {fileID: 0}
 --- !u!212 &845196794
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -53519,7 +53630,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 896176013}
   m_LocalRotation: {x: 0.0083774375, y: 0, z: 0, w: 0.99996495}
-  m_LocalPosition: {x: -202.8, y: -40.8, z: -7.1}
+  m_LocalPosition: {x: 2, y: 221.21622, z: -2.666405}
   m_LocalScale: {x: 0.8984433, y: 0.9027266, z: 1.6908344}
   m_Children:
   - {fileID: 1058347191}
@@ -53907,6 +54018,8 @@ MonoBehaviour:
   radius: {fileID: 785322698}
   reticle: {fileID: 146946137}
   originalSpeed: 0
+  CameraSource: {fileID: 0}
+  PlatformSound: {fileID: 0}
 --- !u!212 &906494787
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -56696,6 +56809,8 @@ MonoBehaviour:
   radius: {fileID: 1170315237}
   reticle: {fileID: 146946137}
   originalSpeed: 0
+  CameraSource: {fileID: 0}
+  PlatformSound: {fileID: 0}
 --- !u!212 &975989558
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -59637,6 +59752,8 @@ MonoBehaviour:
   radius: {fileID: 1067769075}
   reticle: {fileID: 146946137}
   originalSpeed: 0
+  CameraSource: {fileID: 0}
+  PlatformSound: {fileID: 0}
 --- !u!212 &1035249518
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -60077,6 +60194,8 @@ MonoBehaviour:
   radius: {fileID: 740856673}
   reticle: {fileID: 146946137}
   originalSpeed: 0
+  CameraSource: {fileID: 0}
+  PlatformSound: {fileID: 0}
 --- !u!212 &1044194498
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -67170,6 +67289,8 @@ MonoBehaviour:
   radius: {fileID: 841243739}
   reticle: {fileID: 146946137}
   originalSpeed: 0
+  CameraSource: {fileID: 0}
+  PlatformSound: {fileID: 0}
 --- !u!212 &1170667312
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -68555,6 +68676,8 @@ MonoBehaviour:
   radius: {fileID: 1225245894}
   reticle: {fileID: 146946137}
   originalSpeed: 0
+  CameraSource: {fileID: 0}
+  PlatformSound: {fileID: 0}
 --- !u!212 &1197733384
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -75408,6 +75531,8 @@ MonoBehaviour:
   radius: {fileID: 1056710388}
   reticle: {fileID: 146946137}
   originalSpeed: 0
+  CameraSource: {fileID: 0}
+  PlatformSound: {fileID: 0}
 --- !u!212 &1309834345
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -75681,6 +75806,8 @@ MonoBehaviour:
   radius: {fileID: 1740620895}
   reticle: {fileID: 146946137}
   originalSpeed: 0
+  CameraSource: {fileID: 0}
+  PlatformSound: {fileID: 0}
 --- !u!212 &1316771026
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -75938,6 +76065,8 @@ MonoBehaviour:
   radius: {fileID: 1280061875}
   reticle: {fileID: 146946137}
   originalSpeed: 0
+  CameraSource: {fileID: 0}
+  PlatformSound: {fileID: 0}
 --- !u!212 &1322277889
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -76078,6 +76207,8 @@ MonoBehaviour:
   radius: {fileID: 1919062077}
   reticle: {fileID: 146946137}
   originalSpeed: 0
+  CameraSource: {fileID: 0}
+  PlatformSound: {fileID: 0}
 --- !u!212 &1326070357
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -77084,6 +77215,14 @@ PrefabInstance:
       propertyPath: reticle
       value: 
       objectReference: {fileID: 146946137}
+    - target: {fileID: 8863115929434599540, guid: 8518a1eaacb4a4d4d8939fb6d9e3ce55, type: 3}
+      propertyPath: CameraSource
+      value: 
+      objectReference: {fileID: 128335139}
+    - target: {fileID: 8863115929434599540, guid: 8518a1eaacb4a4d4d8939fb6d9e3ce55, type: 3}
+      propertyPath: PlatformSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 2ee5d1acf142b334888daad802594d39, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8518a1eaacb4a4d4d8939fb6d9e3ce55, type: 3}
 --- !u!1 &1336700045
@@ -80443,6 +80582,8 @@ MonoBehaviour:
   radius: {fileID: 258042298}
   reticle: {fileID: 146946137}
   originalSpeed: 0
+  CameraSource: {fileID: 0}
+  PlatformSound: {fileID: 0}
 --- !u!212 &1392557588
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -87700,6 +87841,8 @@ MonoBehaviour:
   radius: {fileID: 1935507475}
   reticle: {fileID: 146946137}
   originalSpeed: 0
+  CameraSource: {fileID: 0}
+  PlatformSound: {fileID: 0}
 --- !u!212 &1515715486
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -90066,6 +90209,8 @@ MonoBehaviour:
   radius: {fileID: 868265503}
   reticle: {fileID: 146946137}
   originalSpeed: 0
+  CameraSource: {fileID: 0}
+  PlatformSound: {fileID: 0}
 --- !u!212 &1557634658
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -97812,6 +97957,8 @@ MonoBehaviour:
   radius: {fileID: 2075096926}
   reticle: {fileID: 146946137}
   originalSpeed: 0
+  CameraSource: {fileID: 0}
+  PlatformSound: {fileID: 0}
 --- !u!212 &1705211894
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -98175,7 +98322,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1712613411}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -202.8, y: -40.8, z: -17.1}
+  m_LocalPosition: {x: 2, y: 221.21622, z: -12.666405}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1013345170}
@@ -99384,6 +99531,8 @@ MonoBehaviour:
   radius: {fileID: 550767899}
   reticle: {fileID: 146946137}
   originalSpeed: 0
+  CameraSource: {fileID: 0}
+  PlatformSound: {fileID: 0}
 --- !u!212 &1731296024
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -100437,6 +100586,8 @@ MonoBehaviour:
   radius: {fileID: 1833738303}
   reticle: {fileID: 146946137}
   originalSpeed: 0
+  CameraSource: {fileID: 0}
+  PlatformSound: {fileID: 0}
 --- !u!212 &1744594163
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -103137,6 +103288,8 @@ MonoBehaviour:
   radius: {fileID: 75646235}
   reticle: {fileID: 146946137}
   originalSpeed: 0
+  CameraSource: {fileID: 0}
+  PlatformSound: {fileID: 0}
 --- !u!212 &1798342400
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -111280,6 +111433,8 @@ MonoBehaviour:
   radius: {fileID: 994532851}
   reticle: {fileID: 146946137}
   originalSpeed: 0
+  CameraSource: {fileID: 0}
+  PlatformSound: {fileID: 0}
 --- !u!212 &1944414812
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -112712,6 +112867,8 @@ MonoBehaviour:
   radius: {fileID: 1429660944}
   reticle: {fileID: 146946137}
   originalSpeed: 0
+  CameraSource: {fileID: 0}
+  PlatformSound: {fileID: 0}
 --- !u!212 &1974410545
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -112784,7 +112941,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7389612560910234977, guid: 4d839a674ef4ac241b6e65bc8141c58a, type: 3}
       propertyPath: m_ForceAngle
-      value: 135
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 7389612560910234977, guid: 4d839a674ef4ac241b6e65bc8141c58a, type: 3}
       propertyPath: m_ForceMagnitude
@@ -115985,6 +116142,8 @@ MonoBehaviour:
   radius: {fileID: 1716405822}
   reticle: {fileID: 146946137}
   originalSpeed: 0
+  CameraSource: {fileID: 0}
+  PlatformSound: {fileID: 0}
 --- !u!212 &2041929875
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -119790,6 +119949,8 @@ MonoBehaviour:
   radius: {fileID: 1222781772}
   reticle: {fileID: 146946137}
   originalSpeed: 0
+  CameraSource: {fileID: 0}
+  PlatformSound: {fileID: 0}
 --- !u!212 &2126685754
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -120670,6 +120831,8 @@ MonoBehaviour:
   radius: {fileID: 461592107}
   reticle: {fileID: 146946137}
   originalSpeed: 0
+  CameraSource: {fileID: 0}
+  PlatformSound: {fileID: 0}
 --- !u!212 &2139022482
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -120865,6 +121028,8 @@ MonoBehaviour:
   radius: {fileID: 3262065872313325392}
   reticle: {fileID: 146946137}
   originalSpeed: 0
+  CameraSource: {fileID: 0}
+  PlatformSound: {fileID: 0}
 --- !u!4 &3262065871812432434
 Transform:
   m_ObjectHideFlags: 0
@@ -121479,6 +121644,8 @@ MonoBehaviour:
   radius: {fileID: 4903286565341731712}
   reticle: {fileID: 146946137}
   originalSpeed: 0
+  CameraSource: {fileID: 0}
+  PlatformSound: {fileID: 0}
 --- !u!4 &4903286565847211746
 Transform:
   m_ObjectHideFlags: 0

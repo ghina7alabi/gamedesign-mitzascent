@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class PlatformScript : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class PlatformScript : MonoBehaviour
     bool shot;
 
     public float originalSpeed;
+
+    public AudioSource CameraSource;
+    public AudioClip PlatformSound;
 
     // Start is called before the first frame update
     void Start()
@@ -63,6 +67,8 @@ public class PlatformScript : MonoBehaviour
             rb.velocity = new Vector3(0, 0, 0);
             this.gameObject.transform.position = OriginalPlatPos;
             PlayerController.platformSpeedUp = false;
+            CameraSource.clip = PlatformSound;
+            CameraSource.Play();
         }
     }
 
