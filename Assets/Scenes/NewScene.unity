@@ -20505,7 +20505,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 0}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -45912,7 +45912,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -3
   m_Sprite: {fileID: 21300000, guid: 8551574edec09064ba104a01280eeb87, type: 3}
   m_Color: {r: 0.73171055, g: 0.8207547, b: 0.7960202, a: 1}
   m_FlipX: 0
@@ -49356,7 +49356,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -5
   m_Sprite: {fileID: 21300000, guid: 8551574edec09064ba104a01280eeb87, type: 3}
   m_Color: {r: 0.62352943, g: 0.69803923, b: 0.6901961, a: 1}
   m_FlipX: 0
@@ -49936,7 +49936,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -3
   m_Sprite: {fileID: 21300000, guid: 8551574edec09064ba104a01280eeb87, type: 3}
   m_Color: {r: 0.68124783, g: 0.764151, b: 0.74119776, a: 1}
   m_FlipX: 0
@@ -59310,7 +59310,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -3
   m_Sprite: {fileID: 21300000, guid: 8551574edec09064ba104a01280eeb87, type: 3}
   m_Color: {r: 0.62237453, g: 0.6981132, b: 0.6892028, a: 1}
   m_FlipX: 0
@@ -63357,7 +63357,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -5
+  m_SortingOrder: -3
   m_Sprite: {fileID: 21300000, guid: 8551574edec09064ba104a01280eeb87, type: 3}
   m_Color: {r: 0.620461, g: 0.6886792, b: 0.65711856, a: 1}
   m_FlipX: 0
@@ -90914,7 +90914,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -5
   m_Sprite: {fileID: 21300000, guid: 8551574edec09064ba104a01280eeb87, type: 3}
   m_Color: {r: 0.62352943, g: 0.69803923, b: 0.6901961, a: 1}
   m_FlipX: 0
@@ -102228,7 +102228,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -5
   m_Sprite: {fileID: 21300000, guid: 8551574edec09064ba104a01280eeb87, type: 3}
   m_Color: {r: 0.6784888, g: 0.745283, b: 0.73825204, a: 1}
   m_FlipX: 0
@@ -103124,7 +103124,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -3
   m_Sprite: {fileID: 21300000, guid: 8551574edec09064ba104a01280eeb87, type: 3}
   m_Color: {r: 0.7276166, g: 0.7830189, b: 0.77718705, a: 1}
   m_FlipX: 0
@@ -106325,7 +106325,7 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 0}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
