@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Narrate;
+using Cinemachine;
 
 public class NPCController : MonoBehaviour
 {
@@ -15,12 +16,10 @@ public class NPCController : MonoBehaviour
     public GameObject pressSpacePrompt;
     bool nearPlayer;
 
+    public string name;
+    bool showCutscene = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+    public GameObject cutscene1, cutscene2;
 
     // Update is called once per frame
     void Update()
@@ -55,7 +54,26 @@ public class NPCController : MonoBehaviour
         {
             pressSpacePrompt.SetActive(false);
             nearPlayer = false;
+
+            if (name == "priest1" && playedInitialSpeech && !showCutscene)
+            {
+                StartCoroutine(Cutscene());
+            }
         }
+        
+    }
+
+    IEnumerator Cutscene()
+    {
+        showCutscene = true;
+
+        cutscene1.SetActive(true);
+        yield return new WaitForSeconds(5);
+        cutscene1.SetActive(false);
+
+        cutscene2.SetActive(true);
+        yield return new WaitForSeconds(5);
+        cutscene2.SetActive(false);
     }
 
 }
