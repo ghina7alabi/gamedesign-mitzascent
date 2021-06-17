@@ -76,11 +76,11 @@ public class NPCController : MonoBehaviour
         showCutscene = true;
 
         cutscene1.SetActive(true);
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(5f);
         cutscene1.SetActive(false);
 
         cutscene2.SetActive(true);
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(5f);
         cutscene2.SetActive(false);
 
         PlatformScript.gotMitz = true;
