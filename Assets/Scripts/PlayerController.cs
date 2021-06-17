@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
     public GameObject[] powerEffect;
 
     static public bool gotMitz;
+
+    public static int difficulty; 
     
     bool onPlatform, mouseClicked, canMove;
 
@@ -77,6 +79,11 @@ public class PlayerController : MonoBehaviour
 
         gotMitz = false;
 
+        if (PlayerPrefs.HasKey("difficulty"))
+        {
+            difficulty = PlayerPrefs.GetInt("difficulty");
+        }
+
         //Application.targetFrameRate = 60;
     }
 
@@ -98,7 +105,7 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isJumping", true);
             animator.SetBool("inAir", true);
         }
-        if (Input.GetKeyDown(KeyCode.W) && !onPlatform && canDoubleJump && canMove) //&& !canMove 
+        if (Input.GetKeyDown(KeyCode.W) && !onPlatform && canDoubleJump && !canMove) //&& !canMove 
         {
             playerRB.AddForce(transform.up * thrust, ForceMode2D.Impulse);
             animator.SetBool("isJumping", true);
@@ -110,7 +117,7 @@ public class PlayerController : MonoBehaviour
         if (gotMitz && Input.GetMouseButtonDown(0))
         {
             mouseClicked = true;
-            if (TitleScript.isEasy = true)
+            if (difficulty == 2)
             {
                 canMove = false;
             }
@@ -277,7 +284,7 @@ public class PlayerController : MonoBehaviour
         {
             onPlatform = false;
 
-            if (TitleScript.isEasy = false)
+            if (difficulty == 2)
             {
                 canMove = false;
             }
