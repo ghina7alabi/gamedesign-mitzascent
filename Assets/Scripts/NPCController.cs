@@ -16,7 +16,7 @@ public class NPCController : MonoBehaviour
     public GameObject pressSpacePrompt;
     bool nearPlayer;
 
-    public string name;
+    public string name = "";
     bool showCutscene = false;
 
     public GameObject cutscene1, cutscene2;
