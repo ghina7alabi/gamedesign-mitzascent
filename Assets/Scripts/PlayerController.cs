@@ -86,19 +86,19 @@ public class PlayerController : MonoBehaviour
         horizontalMove = Input.GetAxisRaw("Horizontal") * walkSpeed;
         animator.SetFloat("speed", Mathf.Abs(horizontalMove));
 
-        if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))) // && canMove
+        if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && canMove) // && canMove
         {
             float horizontal = Input.GetAxis("Horizontal");
             playerRB.velocity = new Vector2(horizontal, playerRB.velocity.y / walkSpeed) * walkSpeed;
         }
 
-        if (Input.GetKeyDown(KeyCode.W) && onPlatform) // && canMove
+        if (Input.GetKeyDown(KeyCode.W) && onPlatform && canMove) // && canMove
         {
             playerRB.AddForce(transform.up * thrust, ForceMode2D.Impulse);
             animator.SetBool("isJumping", true);
             animator.SetBool("inAir", true);
         }
-        if (Input.GetKeyDown(KeyCode.W) && !onPlatform && canDoubleJump) //&& !canMove 
+        if (Input.GetKeyDown(KeyCode.W) && !onPlatform && canDoubleJump && canMove) //&& !canMove 
         {
             playerRB.AddForce(transform.up * thrust, ForceMode2D.Impulse);
             animator.SetBool("isJumping", true);
@@ -110,7 +110,10 @@ public class PlayerController : MonoBehaviour
         if (gotMitz && Input.GetMouseButtonDown(0))
         {
             mouseClicked = true;
-            canMove = false;
+            if (TitleScript.isEasy = true)
+            {
+                canMove = false;
+            }
             animator.SetBool("isPower", true);
             StartCoroutine(WaitForEffect(0.6f));
             Debug.Log("down");
@@ -273,7 +276,11 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Base")
         {
             onPlatform = false;
-            canMove = false;
+
+            if (TitleScript.isEasy = false)
+            {
+                canMove = false;
+            }
 
             if (canRewind) //rewind
             {
