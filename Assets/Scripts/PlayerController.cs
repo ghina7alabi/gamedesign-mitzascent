@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    public AudioSource BGSource;
+    public AudioSource BGSource, VillageSource;
 
     //player variables
     Rigidbody2D playerRB;
@@ -301,6 +301,12 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.name == "TowerBound")
         {
             BGSource.Play();
+            VillageSource.Stop();
+        }
+        if (collision.gameObject.name == "VillageBound" || collision.gameObject.name == "CaveBound")
+        {
+            VillageSource.Play();
+            BGSource.Stop();
         }
     }
 
