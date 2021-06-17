@@ -5,21 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class TitleScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void PlayButton()
     {
         SceneManager.LoadScene("NewScene", LoadSceneMode.Single);
+    }
+
+    public void MenuButton()
+    {
+        SceneManager.LoadScene("TitleScene", LoadSceneMode.Single);
+    }
+
+    public void CreditsButton()
+    {
+        SceneManager.LoadScene("CreditsScene", LoadSceneMode.Single);
     }
 
     public void QuitButton()

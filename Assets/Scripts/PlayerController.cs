@@ -6,6 +6,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using Cinemachine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -123,11 +124,19 @@ public class PlayerController : MonoBehaviour
             powerEffect[1].SetActive(false);
         }
         if (!animator.GetCurrentAnimatorStateInfo(0).IsName("mitzPowerStand"))
-            //|| !animator.GetCurrentAnimatorStateInfo(0).IsName("powerToWalk")
-            //|| !animator.GetCurrentAnimatorStateInfo(0).IsName("PowerJump") )
         {
             powerEffect[0].SetActive(false);
             powerEffect[1].SetActive(false);
+        }
+        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("powerToWalk"))
+        {
+            powerEffect[2].SetActive(false);
+            powerEffect[3].SetActive(false);
+        }
+        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("PowerJump"))
+        {
+            powerEffect[4].SetActive(false);
+            powerEffect[5].SetActive(false);
         }
 
         //DistancePoints
@@ -252,6 +261,11 @@ public class PlayerController : MonoBehaviour
                 Camera.main.transform.position = new Vector3(0, gameObject.transform.position.y, -10);
             }
         }
+
+        if (collision.gameObject.name == "effector")
+        {
+            StartCoroutine(WinScene());
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -332,12 +346,20 @@ public class PlayerController : MonoBehaviour
     IEnumerator WaitForEffect(float seconds)
     {
         yield return new WaitForSeconds(seconds);
-        if(animator.GetCurrentAnimatorStateInfo(0).IsName("mitzPowerStand")
-            || animator.GetCurrentAnimatorStateInfo(0).IsName("powerToWalk")
-            || animator.GetCurrentAnimatorStateInfo(0).IsName("PowerJump") )
+        if(animator.GetCurrentAnimatorStateInfo(0).IsName("mitzPowerStand"))
         {
             powerEffect[0].SetActive(true);
             powerEffect[1].SetActive(true);
+        }
+        if(animator.GetCurrentAnimatorStateInfo(0).IsName("powerToWalk"))
+        {
+            powerEffect[2].SetActive(true);
+            powerEffect[3].SetActive(true);
+        }
+        if(animator.GetCurrentAnimatorStateInfo(0).IsName("PowerJump"))
+        {
+            powerEffect[4].SetActive(true);
+            powerEffect[5].SetActive(true);
         }
     }
 
@@ -347,6 +369,12 @@ public class PlayerController : MonoBehaviour
         NarrationManager.instance.PlayNarration(npcInRange.GetComponent<NPCController>().powerupSpeech);
         fallingDistancePoints -= 5;
         fallingPointsText.text = "" + fallingDistancePoints;
+    }
+
+    IEnumerator WinScene()
+    {
+        yield return new WaitForSeconds(3.5f);
+        SceneManager.LoadScene("WinScene", LoadSceneMode.Single);
     }
 
 }

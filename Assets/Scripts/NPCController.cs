@@ -27,12 +27,12 @@ public class NPCController : MonoBehaviour
     void Update()
     {
 
-        //testing
-        PlatformScript.gotMitz = true;
-        PlayerController.gotMitz = true;
-        ReticleScript.gotMitz = true;
+        ////testing
+        //PlatformScript.gotMitz = true;
+        //PlayerController.gotMitz = true;
+        //ReticleScript.gotMitz = true;
 
-        if (nearPlayer & Input.GetKeyDown(KeyCode.Return))
+        if (nearPlayer & Input.GetKeyDown(KeyCode.E))
         {
             if (!playedInitialSpeech)
             {

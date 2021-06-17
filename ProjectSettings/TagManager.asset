@@ -9,6 +9,7 @@ TagManager:
   - NPC
   - Sticky
   - Gravity
+  - Win
   layers:
   - Default
   - TransparentFX
