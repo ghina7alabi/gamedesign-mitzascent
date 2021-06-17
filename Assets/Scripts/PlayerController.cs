@@ -373,7 +373,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator WinScene()
     {
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(4);
         SceneManager.LoadScene("WinScene", LoadSceneMode.Single);
     }
 
