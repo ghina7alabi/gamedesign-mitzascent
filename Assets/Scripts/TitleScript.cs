@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class TitleScript : MonoBehaviour
 {
+    public static bool isEasy;
+
+    private void Start()
+    {
+        isEasy = true;
+    }
 
     public void PlayButton()
     {
@@ -24,5 +30,15 @@ public class TitleScript : MonoBehaviour
     public void QuitButton()
     {
         Application.Quit();
+    }
+
+    public void EasySwitch()
+    {
+        isEasy = true;
+    }
+
+    public void HardSwitch()
+    {
+        isEasy = false;
     }
 }
